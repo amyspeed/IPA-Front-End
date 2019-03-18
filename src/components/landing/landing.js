@@ -1,9 +1,13 @@
 import React from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import { Dashboard } from '../dashboard/dashboard';
 
 export default class Landing extends React.Component {
     render() {
         return (
+        <Router>
             <div className = "container">
+                <Route exact path="/dashboard" component={Dashboard} />
                 <h1>Welcome to [aI pi eI]</h1>
                 <h2>Emmersive IPA learning blah blah</h2>
                 <p>
@@ -90,6 +94,7 @@ export default class Landing extends React.Component {
                     </button>
                 </form>
             </div>
+        </Router>
         );
     }
 }
