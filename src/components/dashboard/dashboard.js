@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import Landing from '../landing/landing';
 
-export class Dashboard extends React.Component {
+export default class Dashboard extends React.Component {
     render() {
         return (
         <Router>

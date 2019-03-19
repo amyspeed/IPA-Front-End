@@ -2,7 +2,7 @@ import React from 'react';
 
 //import {connect} from 'react-redux';
 
-export class Learn extends React.Component {
+export default class Learn extends React.Component {
     render() {
         return (
             <div className="container">
