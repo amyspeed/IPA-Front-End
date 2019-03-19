@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import { loadAuthToken } from './local-storage';
 import authReducer from './reducers/auth';
 import scoresReducer from './reducers/scores';
-import lessonsReducer from './reducers/lessons';
+import levelsReducer from './reducers/levels';
 import { setAuthToken, refreshAuthToken } from './actions/auth';
 
 const store = createStore(
@@ -12,7 +12,7 @@ const store = createStore(
         form: formReducer, 
         auth: authReducer,
         scores: scoresReducer,
-        lessons: lessonsReducer
+        levels: levelsReducer
     }),
     applyMiddleware(thunk)
 );
