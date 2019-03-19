@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
 
+import Nav from './nav-bar';
 import Landing from './landing/landing';
 import Dashboard from './dashboard/dashboard';
 import Learn from './learn/learn';
@@ -38,6 +39,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Nav />
         <Route exact path="/" component={Landing} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/learn" component={Learn} />

@@ -1,0 +1,134 @@
+import React from 'react';
+
+export default class LeaderBoard extends React.Component {
+    //Create a function to order the winners of each level
+
+    render() {
+        return (
+            <section>
+                <h3>Level 1 Top Scores</h3>
+                <table>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Username</th>
+                        <th>Score</th>
+                    </tr>
+                    <tr>
+                        <td>GOLD</td>
+                        <td>Example</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>SILVER</td>
+                        <td>Example2</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <td>BRONZE</td>
+                        <td>Example3</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Example4</td>
+                        <td>70</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Example5</td>
+                        <td>60</td>
+                    </tr>
+                </table>
+                <h3>Level 2 Top Scores</h3>
+                <table>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Username</th>
+                        <th>Score</th>
+                    </tr>
+                    <tr>
+                        <td>GOLD</td>
+                        <td>Example</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>SILVER</td>
+                        <td>Example2</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <td>BRONZE</td>
+                        <td>Example3</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Example4</td>
+                        <td>70</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Example5</td>
+                        <td>60</td>
+                    </tr>
+                </table>
+                <h3>Level 3 Top Scores</h3>
+                <table>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Username</th>
+                        <th>Score</th>
+                    </tr>
+                    <tr>
+                        <td>GOLD</td>
+                        <td>Example</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>SILVER</td>
+                        <td>Example2</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <td>BRONZE</td>
+                        <td>Example3</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Example4</td>
+                        <td>70</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Example5</td>
+                        <td>60</td>
+                    </tr>
+                </table>
+                <h3>Overall Winners!</h3>
+                <table>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Username</th>
+                        <th>Score</th>
+                    </tr>
+                    <tr>
+                        <td>GOLD</td>
+                        <td>Example</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td>SILVER</td>
+                        <td>Example2</td>
+                        <td>270</td>
+                    </tr>
+                    <tr>
+                        <td>BRONZE</td>
+                        <td>Example3</td>
+                        <td>240</td>
+                    </tr>
+                </table>
+            </section>
+        );
+    }
+};
