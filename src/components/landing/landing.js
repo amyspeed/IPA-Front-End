@@ -5,7 +5,7 @@ import {Redirect} from 'react-router-dom';
 import Welcome from './welcome';
 import Register from './register';
 import LogIn from './login';
-// import Demo from './demo';
+import Demo from './demo';
 
 export function Landing(props) {
     if (props.loggedIn) {
@@ -21,7 +21,7 @@ export function Landing(props) {
             <h2>Already Registered? Sign in:</h2>
             <LogIn />
             <h2>Not ready to commit? Try the demo:</h2>
-            {/* <Demo /> */}
+            <Demo />
         </div>
     );
 }
