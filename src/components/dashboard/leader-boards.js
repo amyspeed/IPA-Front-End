@@ -73,6 +73,7 @@ export class LeaderBoard extends React.Component {
             R.ascend(R.prop('username'))
         ]);
         const level3Winners = level3Sort(allData);
+        
 
         //Sort data by total scores
         const totalScoresSort = R.sortWith([
@@ -81,55 +82,61 @@ export class LeaderBoard extends React.Component {
         ]);
         const overallWinners = totalScoresSort(allData);
 
+        // let index;
+
+        // if (index === 0) {
+        //     index = "GOLD"
+        // }
+
+        // else if (index === 1) {
+        //     index = "SILVER"
+        // }
+
+        // else if (index === 2) {
+        //     index = "BRONZE"
+        // }
+
+        // else if (index === 3) {
+        //     index = 4
+        // }
+
+        // else if (index === 4) {
+        //     index = 5
+        // }
+
+        // else {
+        //     return index
+        // };
+
         return (
             <section>
-                <h3>Level 1 Top Scores</h3>
-                {/* {this.state.userScores.map(user => <h1>this is a user's score{user.quiz1}</h1>)} */}
-                {level1Winners.map((user, index) =>(
+                <h3>Level 1 Top Scores</h3>               
                 <table>
                     <tr>
                         <th>Rank</th>
                         <th>Username</th>
                         <th>Score</th>
                     </tr> 
+                    {level1Winners.slice(0, 5).map((user, index) => (
                     <tr>                  
                         <td>{index}</td>
                         <td>{user.username}</td>
                         <td>{user.level1}</td>
-                    </tr>
-                </table>))}
+                    </tr>))}
+                </table>
                 <h3>Level 2 Top Scores</h3>
                 <table>
                     <tr>
                         <th>Rank</th>
                         <th>Username</th>
                         <th>Score</th>
-                    </tr>
-                    <tr>
-                        <td>GOLD</td>
-                        <td>Example</td>
-                        <td>100</td>
-                    </tr>
-                    <tr>
-                        <td>SILVER</td>
-                        <td>Example2</td>
-                        <td>90</td>
-                    </tr>
-                    <tr>
-                        <td>BRONZE</td>
-                        <td>Example3</td>
-                        <td>80</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Example4</td>
-                        <td>70</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Example5</td>
-                        <td>60</td>
-                    </tr>
+                    </tr> 
+                    {level2Winners.slice(0, 5).map((user, index) =>(
+                    <tr>                  
+                        <td>{index}</td>
+                        <td>{user.username}</td>
+                        <td>{user.level2}</td>
+                    </tr>))}
                 </table>
                 <h3>Level 3 Top Scores</h3>
                 <table>
@@ -137,55 +144,27 @@ export class LeaderBoard extends React.Component {
                         <th>Rank</th>
                         <th>Username</th>
                         <th>Score</th>
-                    </tr>
-                    <tr>
-                        <td>GOLD</td>
-                        <td>Example</td>
-                        <td>100</td>
-                    </tr>
-                    <tr>
-                        <td>SILVER</td>
-                        <td>Example2</td>
-                        <td>90</td>
-                    </tr>
-                    <tr>
-                        <td>BRONZE</td>
-                        <td>Example3</td>
-                        <td>80</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Example4</td>
-                        <td>70</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Example5</td>
-                        <td>60</td>
-                    </tr>
+                    </tr> 
+                    {level3Winners.slice(0, 5).map((user, index) =>(
+                    <tr>                  
+                        <td>{index}</td>
+                        <td>{user.username}</td>
+                        <td>{user.level3}</td>
+                    </tr>))}
                 </table>
-                <h3>Overall Winners!</h3>
+                <h3>Overall Top Scores</h3>
                 <table>
                     <tr>
                         <th>Rank</th>
                         <th>Username</th>
                         <th>Score</th>
-                    </tr>
-                    <tr>
-                        <td>GOLD</td>
-                        <td>Example</td>
-                        <td>300</td>
-                    </tr>
-                    <tr>
-                        <td>SILVER</td>
-                        <td>Example2</td>
-                        <td>270</td>
-                    </tr>
-                    <tr>
-                        <td>BRONZE</td>
-                        <td>Example3</td>
-                        <td>240</td>
-                    </tr>
+                    </tr> 
+                    {overallWinners.slice(0, 5).map((user, index) =>(
+                    <tr>                  
+                        <td>{index}</td>
+                        <td>{user.username}</td>
+                        <td>{user.totalScore}</td>
+                    </tr>))}
                 </table>
             </section>
         );
