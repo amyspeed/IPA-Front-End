@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { API_BASE_URL } from '../../config';
 import { normalizeResponseErrors } from '../../actions/utils';
 import * as R from 'ramda';
+import LeaderBoardView from './leader-board-view';
 // import { fetchAllScores } from '../../actions/scores';
 
 
@@ -29,6 +30,25 @@ export class LeaderBoard extends React.Component {
             error: null,
             loading: true
         });
+
+        // fetch(`${API_BASE_URL}/users/scores/:id`, {
+        //     method: 'GET',
+        //     headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWM5MDg4MTdmNzVjYTcwZTlmZDJhZGEzIiwidXNlcm5hbWUiOiJkZW1vMyIsImZpcnN0TmFtZSI6IkZyaWVuZCIsInF1aXoxIjowLCJxdWl6MiI6MCwicXVpejMiOjAsInRvdGFsU2NvcmUiOjB9LCJpYXQiOjE1NTM2MzQ4MzQsImV4cCI6MTU1NDIzOTYzNCwic3ViIjoiZGVtbzMifQ.l8Z8raUVRPK6bBVpyd3vrSfSWi3q-tD4CAJMHXh4PH4`}
+        // })
+        //     .then(res => normalizeResponseErrors(res))
+        //     .then(res => res.json())
+        //     .then((userData) => {
+        //         this.setState({
+        //         userScores: userData,
+        //         loading: false
+        //     })})
+        //     .catch(err => {
+        //         this.setState({
+        //             error: err,
+        //             loading: false
+        //     });
+        // });
+
         // const authToken = this.auth.authToken;
         return fetch(`${API_BASE_URL}/users/scores`, {
             method: 'GET',
@@ -49,6 +69,29 @@ export class LeaderBoard extends React.Component {
             });
     };
 
+    rankName(index) {
+        if (index === 0) {
+            return "GOLD"
+        }
+
+        if (index === 1) {
+            return "SILVER"
+        }
+
+        if (index === 2) {
+            return "BRONZE"
+        }
+
+        if (index === 3) {
+            return 4
+        }
+
+        if (index === 4) {
+            return 5
+        }
+
+        return index + 1;
+    }
 
     render() {
         const allData = this.state.userScores;
@@ -82,94 +125,12 @@ export class LeaderBoard extends React.Component {
         ]);
         const overallWinners = totalScoresSort(allData);
 
-        // let index;
-
-        // if (index === 0) {
-        //     index = "GOLD"
-        // }
-
-        // else if (index === 1) {
-        //     index = "SILVER"
-        // }
-
-        // else if (index === 2) {
-        //     index = "BRONZE"
-        // }
-
-        // else if (index === 3) {
-        //     index = 4
-        // }
-
-        // else if (index === 4) {
-        //     index = 5
-        // }
-
-        // else {
-        //     return index
-        // };
 
         return (
-            <section>
-                <h3>Level 1 Top Scores</h3>               
-                <table>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Username</th>
-                        <th>Score</th>
-                    </tr> 
-                    {level1Winners.slice(0, 5).map((user, index) => (
-                    <tr>                  
-                        <td>{index}</td>
-                        <td>{user.username}</td>
-                        <td>{user.level1}</td>
-                    </tr>))}
-                </table>
-                <h3>Level 2 Top Scores</h3>
-                <table>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Username</th>
-                        <th>Score</th>
-                    </tr> 
-                    {level2Winners.slice(0, 5).map((user, index) =>(
-                    <tr>                  
-                        <td>{index}</td>
-                        <td>{user.username}</td>
-                        <td>{user.level2}</td>
-                    </tr>))}
-                </table>
-                <h3>Level 3 Top Scores</h3>
-                <table>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Username</th>
-                        <th>Score</th>
-                    </tr> 
-                    {level3Winners.slice(0, 5).map((user, index) =>(
-                    <tr>                  
-                        <td>{index}</td>
-                        <td>{user.username}</td>
-                        <td>{user.level3}</td>
-                    </tr>))}
-                </table>
-                <h3>Overall Top Scores</h3>
-                <table>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Username</th>
-                        <th>Score</th>
-                    </tr> 
-                    {overallWinners.slice(0, 5).map((user, index) =>(
-                    <tr>                  
-                        <td>{index}</td>
-                        <td>{user.username}</td>
-                        <td>{user.totalScore}</td>
-                    </tr>))}
-                </table>
-            </section>
+            <LeaderBoardView level1Winners = {level1Winners} level2Winners = {level2Winners} level3Winners = {level3Winners} overallWinners = {overallWinners} rankName= {this.rankName} />
         );
     }
-};
+}
 
 const mapStateToProps = state => {
     // const { authToken } = state.auth.authToken;
