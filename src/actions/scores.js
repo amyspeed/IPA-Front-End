@@ -22,7 +22,7 @@ export const fetchAllScores = () => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(({data}) => dispatch(fetchScoresSuccess(data)))
+        .then((scores) => dispatch(fetchScoresSuccess(scores)))
         .catch(err => {
             dispatch(fetchScoresError(err));
         });

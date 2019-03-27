@@ -2,7 +2,7 @@ import React from 'react';
 
 export default class CurrentStanding extends React.Component {
         //Function here
-        
+        //function to get by Id
 
     render() {
         return (

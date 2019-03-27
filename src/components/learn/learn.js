@@ -20,7 +20,7 @@ export default class Learn extends React.Component {
                     Once you have feedback on your answer, begin to deconstruct
                     the sounds and commit them to memory before moving on.
                     You will be surprised how quickly you will learn in this 
-                    emmersive way.
+                    immersive way.
                 </p>
                 <section>
                     <h2>Exercise 1 of 10</h2>
