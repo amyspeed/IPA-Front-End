@@ -4,6 +4,7 @@ import { API_BASE_URL } from '../../config';
 import { normalizeResponseErrors } from '../../actions/utils';
 import * as R from 'ramda';
 import LeaderBoardView from './leader-board-view';
+// import CurrentStanding from './current-standing';
 // import { fetchAllScores } from '../../actions/scores';
 
 
@@ -126,10 +127,22 @@ export class LeaderBoard extends React.Component {
         ]);
         const overallWinners = totalScoresSort(allData);
 
+        //Calculate User's Current Standing
+        let topWinner = overallWinners.slice(0, 1).map(user => user.totalScore);
+        let currentStanding = Math.abs(topWinner - this.state.thisUserScores.totalScore)
+        
 
         return (
-            <LeaderBoardView level1Winners = {level1Winners} level2Winners = {level2Winners} level3Winners = {level3Winners} overallWinners = {overallWinners} rankName= {this.rankName} />
-        );
+            <div>
+                <h1>Welcome {this.state.thisUserScores.firstName}!</h1>
+                <h2>
+                Your current total score is {this.state.thisUserScores.totalScore}! 
+                You are {currentStanding} points away from the top score...
+            </h2>
+            {/* <CurrentStanding /> */}
+                <LeaderBoardView level1Winners = {level1Winners} level2Winners = {level2Winners} level3Winners = {level3Winners} overallWinners = {overallWinners} rankName= {this.rankName} />
+            </div>
+            );
     }
 }
 
