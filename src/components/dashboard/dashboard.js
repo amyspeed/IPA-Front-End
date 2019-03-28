@@ -7,9 +7,11 @@ import CourseLinks from './course-links';
 
 export class Dashboard extends React.Component {
     // componentDidMount() {
-    //     this.props.dispatch(fetchAllScores());
+    //     // this.props.dispatch(fetchAllScores());
     // }
+
     render() {
+        // authToken = this.props.authToken;
         return (
             <div className="container">
                 <LeaderBoards />

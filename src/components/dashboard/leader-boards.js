@@ -137,10 +137,20 @@ export class LeaderBoard extends React.Component {
 
         return (
             <div>
-                <CurrentStanding firstName = {firstName} currentScore = {currentScore} currentStanding = {currentStanding} />
-                <LeaderBoardView level1Winners = {level1Winners} level2Winners = {level2Winners} level3Winners = {level3Winners} overallWinners = {overallWinners} rankName= {this.rankName} />
+                <CurrentStanding 
+                    firstName = {firstName} 
+                    currentScore = {currentScore} 
+                    currentStanding = {currentStanding} 
+                />
+                <LeaderBoardView 
+                    level1Winners = {level1Winners} 
+                    level2Winners = {level2Winners} 
+                    level3Winners = {level3Winners} 
+                    overallWinners = {overallWinners} 
+                    rankName= {this.rankName} 
+                />
             </div>
-            );
+        );
     }
 }
 
