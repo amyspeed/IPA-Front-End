@@ -11,7 +11,8 @@ export class LeaderBoard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            userScores: [],
+            thisUserScores: [],
+            allUserScores: [],
             error: null,
             loading: false
         } 
@@ -31,23 +32,23 @@ export class LeaderBoard extends React.Component {
             loading: true
         });
 
-        // fetch(`${API_BASE_URL}/users/scores/:id`, {
-        //     method: 'GET',
-        //     headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWM5MDg4MTdmNzVjYTcwZTlmZDJhZGEzIiwidXNlcm5hbWUiOiJkZW1vMyIsImZpcnN0TmFtZSI6IkZyaWVuZCIsInF1aXoxIjowLCJxdWl6MiI6MCwicXVpejMiOjAsInRvdGFsU2NvcmUiOjB9LCJpYXQiOjE1NTM2MzQ4MzQsImV4cCI6MTU1NDIzOTYzNCwic3ViIjoiZGVtbzMifQ.l8Z8raUVRPK6bBVpyd3vrSfSWi3q-tD4CAJMHXh4PH4`}
-        // })
-        //     .then(res => normalizeResponseErrors(res))
-        //     .then(res => res.json())
-        //     .then((userData) => {
-        //         this.setState({
-        //         userScores: userData,
-        //         loading: false
-        //     })})
-        //     .catch(err => {
-        //         this.setState({
-        //             error: err,
-        //             loading: false
-        //     });
-        // });
+        fetch(`${API_BASE_URL}/users/scores/5c914fd871a50502c0906533`, {
+            method: 'GET',
+            headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWM5MDg4MTdmNzVjYTcwZTlmZDJhZGEzIiwidXNlcm5hbWUiOiJkZW1vMyIsImZpcnN0TmFtZSI6IkZyaWVuZCIsInF1aXoxIjowLCJxdWl6MiI6MCwicXVpejMiOjAsInRvdGFsU2NvcmUiOjB9LCJpYXQiOjE1NTM2MzQ4MzQsImV4cCI6MTU1NDIzOTYzNCwic3ViIjoiZGVtbzMifQ.l8Z8raUVRPK6bBVpyd3vrSfSWi3q-tD4CAJMHXh4PH4`}
+        })
+            .then(res => normalizeResponseErrors(res))
+            .then(res => res.json())
+            .then((thisUserData) => {
+                this.setState({
+                thisUserScores: thisUserData,
+                loading: false
+            })})
+            .catch(err => {
+                this.setState({
+                    error: err,
+                    loading: false
+            });
+        });
 
         // const authToken = this.auth.authToken;
         return fetch(`${API_BASE_URL}/users/scores`, {
@@ -56,9 +57,9 @@ export class LeaderBoard extends React.Component {
         })
             .then(res => normalizeResponseErrors(res))
             .then(res => res.json())
-            .then((userData) => {
+            .then((allUserData) => {
                 this.setState({
-                userScores: userData,
+                allUserScores: allUserData,
                 loading: false
             })})
             .catch(err => {
@@ -94,7 +95,7 @@ export class LeaderBoard extends React.Component {
     }
 
     render() {
-        const allData = this.state.userScores;
+        const allData = this.state.allUserScores;
 
         //Sort data by level 1 scores
         const level1Sort = R.sortWith([
