@@ -16,7 +16,7 @@ export class LogIn extends React.Component {
                 <div className="form-error">{this.props.error}</div>
             );
         }
-        return (
+        return (            
             <form
                 className="login-form"
                 onSubmit={this.props.handleSubmit(values =>
