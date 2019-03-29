@@ -1,43 +1,85 @@
 import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utils';
-//import lesson Id from somewhere
+// import { levelId } from 
 
-export const FETCH_LEVELS_SUCCESS = 'FETCH_LEVELS_SUCCESS';
-export const fetchLevelsSuccess = data => ({
-    type: FETCH_LEVELS_SUCCESS,
+export const FETCH_LEVEL_SUCCESS = 'FETCH_LEVEL_SUCCESS';
+export const fetchLevelSuccess = data => ({
+    type: FETCH_LEVEL_SUCCESS,
     data
 });
 
-export const FETCH_LEVELS_ERROR = 'FETCH_LEVELS_ERROR';
-export const fetchLevelsError = error => ({
-    type: FETCH_LEVELS_ERROR,
+export const FETCH_LEVEL_ERROR = 'FETCH_LEVEL_ERROR';
+export const fetchLevelError = error => ({
+    type: FETCH_LEVEL_ERROR,
     error
 });
 
-export const fetchLevels = () => (dispatch, getState) => {
-    const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/levels`, {
-        method: 'GET',
-        headers: { Authorization: `Bearer ${authToken}`}
-    })
-        .then(res => normalizeResponseErrors(res))
-        .then(res => res.json())
-        .then(({data}) => dispatch(fetchLevelsSuccess(data)))
-        .catch(err => {
-            dispatch(fetchLevelsError(err));
-        });
-};
-
-// export const FetchLevelsById = () => (dispatch, getState) => {
+// export const fetchLevels = () => (dispatch, getState) => {
 //     const authToken = getState().auth.authToken;
-//     return fetch(`${API_BASE_URL}/levels/${LevelId}`, {
-//         method: 'Get',
+//     return fetch(`${API_BASE_URL}/levels`, {
+//         method: 'GET',
 //         headers: { Authorization: `Bearer ${authToken}`}
 //     })
 //         .then(res => normalizeResponseErrors(res))
 //         .then(res => res.json())
-//         .then(({data}) => dispatch(fetchLessosSuccess(data)))
+//         .then(({data}) => dispatch(fetchLevelSuccess(data)))
 //         .catch(err => {
-//             dispatch(fetchLessonsError(err));
+//             dispatch(fetchLevelError(err));
 //         });
-// }
+// };
+
+export const fetchLevel = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/levels/5c90a043160522672a83b680`, {
+        method: 'Get',
+        headers: { Authorization: `Bearer ${authToken}`}
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(({data}) => dispatch(fetchLevelSuccess(data)))
+        .catch(err => {
+            dispatch(fetchLevelError(err));
+        });
+}
+
+export const fetchLevel1 = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/levels/5c90a043160522672a83b680`, {
+        method: 'Get',
+        headers: { Authorization: `Bearer ${authToken}`}
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(({data}) => dispatch(fetchLevelSuccess(data)))
+        .catch(err => {
+            dispatch(fetchLevelError(err));
+        });
+}
+
+export const fetchLevel2 = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/levels/5c90a043160522672a83b681`, {
+        method: 'Get',
+        headers: { Authorization: `Bearer ${authToken}`}
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(({data}) => dispatch(fetchLevelSuccess(data)))
+        .catch(err => {
+            dispatch(fetchLevelError(err));
+        });
+}
+
+export const fetchLevel3 = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/levels/5c90a043160522672a83b682`, {
+        method: 'Get',
+        headers: { Authorization: `Bearer ${authToken}`}
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(({data}) => dispatch(fetchLevelSuccess(data)))
+        .catch(err => {
+            dispatch(fetchLevelError(err));
+        });
+}

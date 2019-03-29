@@ -42,7 +42,7 @@ class App extends React.Component {
         <Nav />
         <Route exact path="/" component={Landing} />
         <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/learn" component={Learn} />
+        <Route path="/learn" component={Learn} />
       </div>
     );
   }

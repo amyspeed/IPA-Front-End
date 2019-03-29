@@ -1,20 +1,20 @@
 import {
-    FETCH_LEVELS_SUCCESS,
-    FETCH_LEVELS_ERROR
+    FETCH_LEVEL_SUCCESS,
+    FETCH_LEVEL_ERROR
 } from '../actions/levels';
 
 const initialState = {
-    data: {},
+    data: [],
     error: null
 };
 
 export default function reducer(state = initialState, action) {
-    if (action.type === FETCH_LEVELS_SUCCESS) {
+    if (action.type === FETCH_LEVEL_SUCCESS) {
         return Object.assign({}, state, {
             data: action.data,
             error: null
         });
-    } else if (action.type === FETCH_LEVELS_ERROR) {
+    } else if (action.type === FETCH_LEVEL_ERROR) {
         return Object.assign({}, state, {
             error: action.error
         });

@@ -1,16 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { fetchLevel } from '../../actions/levels';
 
-//import {connect} from 'react-redux';
+export class Learn extends React.Component {
+    getLevelData(level) {
+        this.props.dispatch(fetchLevel(level, this.props.match.params.levelId));
+    }
 
-export default class Learn extends React.Component {
     render() {
         return (
             <div className="container">
-                <nav>
-                    <h1>Logo Here</h1>
-                    <button>Log Out</button>
-                    <button>Exit Level</button>
-                </nav>
+                <button>Exit Level</button>
                 <h1>Level 1</h1>
                 <p>
                     IPA symbols are always presented in brackets.
@@ -43,3 +43,9 @@ export default class Learn extends React.Component {
         );
     }
 }
+
+const mapStateToProps = (state, props) => {
+
+};
+
+export default connect(mapStateToProps)(Learn);

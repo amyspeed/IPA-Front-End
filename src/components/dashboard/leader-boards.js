@@ -134,7 +134,6 @@ export class LeaderBoard extends React.Component {
         let topWinner = overallWinners.slice(0, 1).map(user => user.totalScore);
         let currentStanding = Math.abs(topWinner - this.state.thisUserScores.totalScore)
         
-
         return (
             <div>
                 <CurrentStanding 

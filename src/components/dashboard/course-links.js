@@ -1,20 +1,16 @@
 import React from 'react';
-import { reduxForm, focus } from 'redux-form';
+import { Link } from 'react-router-dom';
 // import learn from '../learn/learn';
+// import { fetchLevel1 } from '../../actions/levels';
 
-export class CourseLinks extends React.Component {
-    // onSubmit(values) {
-    //     return this.props.dispatch(learn(values.level1, values.level2, values.level3));
-    // }
+export default class CourseLinks extends React.Component {
 
     render() {
         return (            
             <form className="learn-form">
-                <button onClick = {() => this.props.XXX}
-                        value = "level1"
-                >
-                    Level 1
-                </button>
+                <h2>
+                    <Link to='/learn/level1'>Level 1</Link>
+                </h2>
                 <button disabled={this.props.pristine || this.props.submitting}
                         value = "level2"
                 >
@@ -29,8 +25,3 @@ export class CourseLinks extends React.Component {
         );
     }
 };
-
-export default reduxForm({
-    form: 'learn',
-    onSubmitFail: (errors, dispatch) => dispatch(focus('level1', 'level2', 'level3'))
-})(CourseLinks);

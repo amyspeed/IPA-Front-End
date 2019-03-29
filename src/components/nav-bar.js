@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
+import { Link } from 'react-router-dom';
 
 export class Nav extends React.Component {
     logOut() {
@@ -21,7 +22,9 @@ export class Nav extends React.Component {
         }
         return (
             <nav>
-                <h1>Logo Here</h1>
+                <h1>
+                    <Link to="/">Logo Here</Link>
+                </h1>
                 {logOutButton}
             </nav>
         );
