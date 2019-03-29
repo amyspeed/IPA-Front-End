@@ -3,9 +3,9 @@ import { normalizeResponseErrors } from './utils';
 //import userId from somewhere
 
 export const FETCH_SCORES_SUCCESS = 'FETCH_SCORES_SUCCESS';
-export const fetchScoresSuccess = data => ({
+export const fetchScoresSuccess = allUsers => ({
     type: FETCH_SCORES_SUCCESS,
-    data
+    allUsers
 });
 
 export const FETCH_SCORES_ERROR = 'FETCH_SCORES_ERROR';
@@ -14,7 +14,7 @@ export const fetchScoresError = error => ({
     error
 });
 
-export const fetchAllScores = () => (dispatch, getState) => {
+export const fetchScores = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/users/scores`, {
         method: 'GET',
@@ -27,20 +27,6 @@ export const fetchAllScores = () => (dispatch, getState) => {
             dispatch(fetchScoresError(err));
         });
 };
-
-// export const fetchScoresByUserId = () => (dispatch, getState) => {
-//     const authToken = getState().auth.authToken;
-//     return fetch(`${API_BASE_URL}/users/scores/${userId}`, {
-//         method: 'GET',
-//         headers: { Authorization: `Bearer ${authToken}`}
-//     })
-//         .then(res => normalizeResponseErrors(res))
-//         .then(res => res.json())
-//         .then(({data}) => dispatch(fetchScoresSuccess(data)))
-//         .catch(err => {
-//             dispatch(fetchScoresError(err));
-//         });
-// };
 
 // export const PutScoresByUserId = () => (dispatch, getState) => {
 //     const authToken = getState().auth.authToken;

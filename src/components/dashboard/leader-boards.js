@@ -1,56 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { API_BASE_URL } from '../../config';
-import { normalizeResponseErrors } from '../../actions/utils';
 import * as R from 'ramda';
 import LeaderBoardView from './leader-board-view';
 import CurrentStanding from './current-standing';
-// import { fetchAllScores } from '../../actions/scores';
+import { fetchScores } from '../../actions/scores';
 
 
 export class LeaderBoard extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            allUserScores: [],
-            error: null,
-            loading: false
-        } 
-    }
 
     componentDidMount() {
-        this.fetchAllScores();
+        this.props.dispatch(fetchScores());
     }
     
     componentDidUpdate() {
-        console.log(this.props.authToken, this.props.totalScore);
+        console.log(this.props.allScores);
     }
-
-    fetchAllScores() {
-        this.setState({
-            error: null,
-            loading: true
-        });
-
-        // const authToken = this.auth.authToken;
-        return fetch(`${API_BASE_URL}/users/scores`, {
-            method: 'GET',
-            headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWM5MDg4MTdmNzVjYTcwZTlmZDJhZGEzIiwidXNlcm5hbWUiOiJkZW1vMyIsImZpcnN0TmFtZSI6IkZyaWVuZCIsInF1aXoxIjowLCJxdWl6MiI6MCwicXVpejMiOjAsInRvdGFsU2NvcmUiOjB9LCJpYXQiOjE1NTM2MzQ4MzQsImV4cCI6MTU1NDIzOTYzNCwic3ViIjoiZGVtbzMifQ.l8Z8raUVRPK6bBVpyd3vrSfSWi3q-tD4CAJMHXh4PH4`}
-        })
-            .then(res => normalizeResponseErrors(res))
-            .then(res => res.json())
-            .then((allUserData) => {
-                this.setState({
-                allUserScores: allUserData,
-                loading: false
-            })})
-            .catch(err => {
-                this.setState({
-                    error: err,
-                    loading: false
-                });
-            });
-    };
 
     rankName(index) {
         if (index === 0) {
@@ -77,7 +41,7 @@ export class LeaderBoard extends React.Component {
     }
 
     render() {
-        const allData = this.state.allUserScores;
+        const allData = this.props.allScores;
 
         //Sort data by level 1 scores
         const level1Sort = R.sortWith([
@@ -133,10 +97,9 @@ export class LeaderBoard extends React.Component {
 }
 
 const mapStateToProps = state => {
-    // const { authToken } = state.auth.authToken;
-    // return {
-    //     authToken
-    // };
+    return {
+        allScores: state.scores.allUsers
+    };
 };
 
 export default (connect(mapStateToProps)(LeaderBoard));
