@@ -7,7 +7,7 @@ import { fetchScores } from '../../actions/scores';
 
 
 export class LeaderBoard extends React.Component {
-
+    
     componentDidMount() {
         this.props.dispatch(fetchScores());
     }
