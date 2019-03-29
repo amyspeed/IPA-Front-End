@@ -6,6 +6,8 @@ import Nav from './nav-bar';
 import Landing from './landing/landing';
 import Dashboard from './dashboard/dashboard';
 import Learn from './learn/learn';
+// import Instructions from './learn/instructions';
+// import Module from './learn/module'
 import { refreshAuthToken } from '../actions/auth';
 import './App.css';
 
@@ -42,7 +44,10 @@ class App extends React.Component {
         <Nav />
         <Route exact path="/" component={Landing} />
         <Route exact path="/dashboard" component={Dashboard} />
-        <Route path="/learn" component={Learn} />
+        <Route path="/learn/:levelId" component={Learn}>
+          {/* <Route path="/instructions" component={Instructions} />
+          <Route path="/module" component={Module} /> */}
+        </Route>
       </div>
     );
   }

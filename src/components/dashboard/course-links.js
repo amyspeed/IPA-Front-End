@@ -9,7 +9,7 @@ export default class CourseLinks extends React.Component {
         return (            
             <form className="learn-form">
                 <h2>
-                    <Link to='/learn/level1'>Level 1</Link>
+                    <Link to='/learn/:levelId/instructions'>Level 1</Link>
                 </h2>
                 <button disabled={this.props.pristine || this.props.submitting}
                         value = "level2"
