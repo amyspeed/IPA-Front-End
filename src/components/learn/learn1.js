@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchLevel } from '../../actions/levels';
+import { fetchLevel1 } from '../../actions/levels';
 import requiresLogin from '../dashboard/requires-login';
 import Instructions from './instructions';
 import Module from './module';
 // import Main from './main';
 
-export class Learn extends React.Component {
+export class Learn1 extends React.Component {
     componentDidMount() {
-        this.props.dispatch(fetchLevel());
+        this.props.dispatch(fetchLevel1());
     }
 
     componentDidUpdate() {
@@ -37,4 +37,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default requiresLogin()(connect(mapStateToProps)(Learn));
+export default requiresLogin()(connect(mapStateToProps)(Learn1));

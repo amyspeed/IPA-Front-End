@@ -1,6 +1,6 @@
 import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utils';
-// import { levelId } from 
+// import { SubmissionError } from 'redux-form';
 
 export const FETCH_LEVEL_SUCCESS = 'FETCH_LEVEL_SUCCESS';
 export const fetchLevelSuccess = data => ({
@@ -28,15 +28,15 @@ export const fetchLevelError = error => ({
 //         });
 // };
 
-export const fetchLevel = () => (dispatch, getState) => {
+export const fetchLevel = () => (dispatch, getState, levelId) => {
     const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/levels/5c90a043160522672a83b680`, {
-        method: 'Get',
+    return fetch(`${API_BASE_URL}/levels/${levelId}`, {
+        method: 'GET',
         headers: { Authorization: `Bearer ${authToken}`}
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(({data}) => dispatch(fetchLevelSuccess(data)))
+        .then((data) => dispatch(fetchLevelSuccess(data)))
         .catch(err => {
             dispatch(fetchLevelError(err));
         });
@@ -50,7 +50,7 @@ export const fetchLevel1 = () => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(({data}) => dispatch(fetchLevelSuccess(data)))
+        .then((data) => dispatch(fetchLevelSuccess(data)))
         .catch(err => {
             dispatch(fetchLevelError(err));
         });
@@ -64,7 +64,7 @@ export const fetchLevel2 = () => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(({data}) => dispatch(fetchLevelSuccess(data)))
+        .then((data) => dispatch(fetchLevelSuccess(data)))
         .catch(err => {
             dispatch(fetchLevelError(err));
         });
@@ -78,7 +78,7 @@ export const fetchLevel3 = () => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(({data}) => dispatch(fetchLevelSuccess(data)))
+        .then((data) => dispatch(fetchLevelSuccess(data)))
         .catch(err => {
             dispatch(fetchLevelError(err));
         });
