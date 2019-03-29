@@ -12,7 +12,6 @@ export class LeaderBoard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            thisUserScores: [],
             allUserScores: [],
             error: null,
             loading: false
@@ -24,31 +23,13 @@ export class LeaderBoard extends React.Component {
     }
     
     componentDidUpdate() {
-        console.log(this.state);
+        console.log(this.props.authToken, this.props.totalScore);
     }
 
     fetchAllScores() {
         this.setState({
             error: null,
             loading: true
-        });
-
-        fetch(`${API_BASE_URL}/users/scores/5c914fd871a50502c0906533`, {
-            method: 'GET',
-            headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWM5MDg4MTdmNzVjYTcwZTlmZDJhZGEzIiwidXNlcm5hbWUiOiJkZW1vMyIsImZpcnN0TmFtZSI6IkZyaWVuZCIsInF1aXoxIjowLCJxdWl6MiI6MCwicXVpejMiOjAsInRvdGFsU2NvcmUiOjB9LCJpYXQiOjE1NTM2MzQ4MzQsImV4cCI6MTU1NDIzOTYzNCwic3ViIjoiZGVtbzMifQ.l8Z8raUVRPK6bBVpyd3vrSfSWi3q-tD4CAJMHXh4PH4`}
-        })
-            .then(res => normalizeResponseErrors(res))
-            .then(res => res.json())
-            .then((thisUserData) => {
-                this.setState({
-                thisUserScores: thisUserData,
-                loading: false
-            })})
-            .catch(err => {
-                this.setState({
-                    error: err,
-                    loading: false
-            });
         });
 
         // const authToken = this.auth.authToken;
@@ -127,17 +108,15 @@ export class LeaderBoard extends React.Component {
         ]);
         const overallWinners = totalScoresSort(allData);
 
-        const firstName = this.state.thisUserScores.firstName;
-        const currentScore = this.state.thisUserScores.totalScore;
+        const currentScore = this.props.totalScore;
 
         //Calculate User's Current Standing
         let topWinner = overallWinners.slice(0, 1).map(user => user.totalScore);
-        let currentStanding = Math.abs(topWinner - this.state.thisUserScores.totalScore)
+        let currentStanding = Math.abs(topWinner - this.props.totalScore)
         
         return (
             <div>
                 <CurrentStanding 
-                    firstName = {firstName} 
                     currentScore = {currentScore} 
                     currentStanding = {currentStanding} 
                 />

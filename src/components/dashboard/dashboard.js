@@ -1,20 +1,27 @@
 import React from 'react';
-// import {connect} from 'react-redux';
+import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 // import { fetchAllScores } from '../../actions/scores';
 import LeaderBoards from './leader-boards';
 import CourseLinks from './course-links';
 
 export class Dashboard extends React.Component {
-    // componentDidMount() {
-    //     // this.props.dispatch(fetchAllScores());
-    // }
+    componentDidMount() {
+        console.log(this.props.authToken);
+        // this.props.dispatch(fetchAllScores());
+    }
 
     render() {
-        // authToken = this.props.authToken;
+        const authToken = this.props.authToken;
+        const totalScore = this.props.totalScore;
+
         return (
             <div className="container">
-                <LeaderBoards />
+                <h1>Welcome {this.props.firstName}!</h1>
+                <LeaderBoards 
+                    auth = {authToken}
+                    totalScore = {totalScore}
+                />
                 <h2>Start learning!</h2>
                 <CourseLinks />
             </div>
@@ -22,13 +29,13 @@ export class Dashboard extends React.Component {
     }
 };
 
-// const mapStateToProps = state => {
-//     const { currentUser } = state.auth;
-//     return {
-//         username: state.auth.currentUser.username,
-//         name: `${currentUser.firstName} ${currentUser.lastName}`,
-//         // scores: state.scores.data
-//     };
-// };
+const mapStateToProps = state => {
+    console.log(state.auth.authToken);
+    return {
+        authToken: state.auth.authToken,
+        firstName: state.auth.currentUser.firstName,
+        totalScore: state.auth.currentUser.totalScore
+    };
+};
 
-export default requiresLogin()(Dashboard);
+export default requiresLogin()(connect(mapStateToProps)(Dashboard));
