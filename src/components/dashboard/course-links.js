@@ -27,7 +27,7 @@ export class CourseLinks extends React.Component {
                         levelId = "5c90a043160522672a83b681"
                 >
                     <Link 
-                        to ='/learn2/module'
+                        to ='/learn/5c90a043160522672a83b681'
                     >
                         Level 2
                     </Link>
@@ -36,7 +36,7 @@ export class CourseLinks extends React.Component {
                         levelId = "5c90a043160522672a83b682"
                 >
                     <Link 
-                        to ='/learn3/module'
+                        to ='/learn/5c90a043160522672a83b682'
                     >
                         Level 3
                     </Link>
