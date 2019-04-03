@@ -1,4 +1,5 @@
 import React from 'react';
+import Counter from './counter';
 
 export default class Module extends React.Component {
     render() {
@@ -8,7 +9,7 @@ export default class Module extends React.Component {
 
         return (
             <section>
-            <h2>Exercise 1 of 10</h2>
+                <Counter />
             <h3>Questions Here!</h3>
                 <form>
                     <label htmlFor="answer">
