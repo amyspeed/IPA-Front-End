@@ -16,15 +16,16 @@ export class Learn1 extends React.Component {
     }
 
     render() {
+        const learningData = this.props.level;
         return (
             <div className="container">
                 <button>Exit Level</button>
-                <h1>Level {this.props.level.level}</h1>
+                <h1>Level {learningData.level}</h1>
                 {/* <main>
                     {React.cloneElement(this.props.children, this.props)}
                 </main> */}
                 <Instructions />
-                <Module />
+                <Module learningData={learningData} />
             </div>
 
         );

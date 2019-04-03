@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 export default class Instructions extends React.Component {
     render() {
@@ -19,8 +19,7 @@ export default class Instructions extends React.Component {
                     immersive way. Be sure to finish the entire level to log your
                     earned points for a chance to compete for a winning place on the leaderboards! 
                 </p>
-                <button>
-                    <Link to="/learn/:levelId/module">Let's Go!</Link>
+                <button onClick={this.props.handleClick}>Let's Go!
                 </button>
             </div>
         )

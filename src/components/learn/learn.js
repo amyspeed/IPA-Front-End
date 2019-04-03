@@ -7,12 +7,28 @@ import Module from './module';
 // import Main from './main';
 
 export class Learn extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            completedInstructions: false
+        }
+        this.completeInstructions = this.completeInstructions.bind(this);
+    }
+
+
     componentDidMount() {
-        this.props.dispatch(fetchLevel());
+        console.log(this.props.match.params.id);
+        this.props.dispatch(fetchLevel(this.props.match.params.id));
     }
 
     componentDidUpdate() {
-        console.log(this.props.level.level);
+        console.log(this.state);
+    }
+
+    completeInstructions() {
+        this.setState({
+            completedInstructions: true
+        })
     }
 
     render() {
@@ -23,8 +39,7 @@ export class Learn extends React.Component {
                 {/* <main>
                     {React.cloneElement(this.props.children, this.props)}
                 </main> */}
-                <Instructions />
-                <Module />
+                {this.state.completedInstructions ? <Module /> : <Instructions handleClick={this.completeInstructions} /> }
             </div>
 
         );

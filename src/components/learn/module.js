@@ -2,12 +2,16 @@ import React from 'react';
 
 export default class Module extends React.Component {
     render() {
+        // const learningData = this.props.learningData;
+        // let i = 1;
+        // const question = learningData.question1;
+
         return (
             <section>
             <h2>Exercise 1 of 10</h2>
-            <h3>[kæt]</h3>
+            <h3>Questions Here!</h3>
                 <form>
-                    <label for="answer">
+                    <label htmlFor="answer">
                         Enter answer in English
                     </label>
                     <input

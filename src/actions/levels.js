@@ -28,7 +28,7 @@ export const fetchLevelError = error => ({
 //         });
 // };
 
-export const fetchLevel = () => (dispatch, getState, levelId) => {
+export const fetchLevel = (levelId) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/levels/${levelId}`, {
         method: 'GET',

@@ -18,7 +18,7 @@ export class CourseLinks extends React.Component {
             >
                 <button levelId = "5c90a043160522672a83b680">
                     <Link 
-                        to ='/learn1/instructions'
+                        to ='/learn/5c90a043160522672a83b680'
                     >
                         Level 1
                     </Link>
