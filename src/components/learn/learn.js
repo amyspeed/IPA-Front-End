@@ -17,7 +17,6 @@ export class Learn extends React.Component {
 
 
     componentDidMount() {
-        console.log(this.props.match.params.id);
         this.props.dispatch(fetchLevel(this.props.match.params.id));
     }
 
@@ -33,6 +32,7 @@ export class Learn extends React.Component {
 
     render() {
         const instructions = this.props.level.instructions;
+        const questionData = this.props.level.questions;
         return (
             <div className="container">
                 <button>Exit Level</button>
@@ -40,7 +40,7 @@ export class Learn extends React.Component {
                 {/* <main>
                     {React.cloneElement(this.props.children, this.props)}
                 </main> */}
-                {this.state.completedInstructions ? <Module /> : <Instructions instructions={instructions} handleClick={this.completeInstructions} /> }
+                {this.state.completedInstructions ? <Module questionData={questionData} /> : <Instructions instructions={instructions} handleClick={this.completeInstructions} /> }
             </div>
 
         );
