@@ -16,27 +16,27 @@ export class CourseLinks extends React.Component {
                     onSelect={this.props.handleSubmit(levelId =>
                         this.onSelect(levelId))}
             >
-                <button levelId = "5c90a043160522672a83b680">
+                <button level = "1">
                     <Link 
-                        to ='/learn/5c90a043160522672a83b680'
+                        to ='/learn/5ca54db1eebaf529016271aa'
                     >
                         Level 1
                     </Link>
                 </button>
                 <button disabled={this.props.pristine || this.props.submitting}
-                        levelId = "5c90a043160522672a83b681"
+                        level = "2"
                 >
                     <Link 
-                        to ='/learn/5c90a043160522672a83b681'
+                        to ='/learn/5ca54db1eebaf529016271a9'
                     >
                         Level 2
                     </Link>
                 </button>
                 <button disabled={this.props.pristine || this.props.submitting}
-                        levelId = "5c90a043160522672a83b682"
+                        level = "3"
                 >
                     <Link 
-                        to ='/learn/5c90a043160522672a83b682'
+                        to ='/learn/5ca54db1eebaf529016271a8'
                     >
                         Level 3
                     </Link>

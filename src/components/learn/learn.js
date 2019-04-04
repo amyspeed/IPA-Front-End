@@ -32,6 +32,7 @@ export class Learn extends React.Component {
     }
 
     render() {
+        const instructions = this.props.level.instructions;
         return (
             <div className="container">
                 <button>Exit Level</button>
@@ -39,7 +40,7 @@ export class Learn extends React.Component {
                 {/* <main>
                     {React.cloneElement(this.props.children, this.props)}
                 </main> */}
-                {this.state.completedInstructions ? <Module /> : <Instructions handleClick={this.completeInstructions} /> }
+                {this.state.completedInstructions ? <Module /> : <Instructions instructions={instructions} handleClick={this.completeInstructions} /> }
             </div>
 
         );
