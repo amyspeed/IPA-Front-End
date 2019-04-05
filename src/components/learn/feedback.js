@@ -1,11 +1,17 @@
 import React from 'react';
 
 export default class Feedback extends React.Component {
+
     render() {
+        const { feedback, currentPoints, points, handleClick } = this.props;
         return (
             <div>
-                <p>{this.props.feedback}</p>
-                {this.props.points ? <p>{this.props.points} Points!</p> : ''}
+                <h3>{feedback}</h3>
+                {currentPoints ? <p>{currentPoints} Points!</p> : null}
+                {feedback && points ? <p>Your current score: {points}</p> : null}
+                {feedback ? 
+                        <button onClick={handleClick}>Next Question</button>
+                : null}
             </div>
         );
     }

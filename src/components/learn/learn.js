@@ -37,10 +37,9 @@ export class Learn extends React.Component {
             <div className="container">
                 <button>Exit Level</button>
                 <h1>Level {this.props.level.level}</h1>
-                {/* <main>
-                    {React.cloneElement(this.props.children, this.props)}
-                </main> */}
-                {this.state.completedInstructions ? <Module questionData={questionData} /> : <Instructions instructions={instructions} handleClick={this.completeInstructions} /> }
+                {this.state.completedInstructions ? 
+                    <Module questionData={questionData} /> : 
+                    <Instructions instructions={instructions} handleClick={this.completeInstructions} /> }
             </div>
 
         );

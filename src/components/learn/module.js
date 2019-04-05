@@ -9,63 +9,98 @@ export default class Module extends React.Component {
         this.state = {
             arrayIndex: 0,
             feedback: '',
-            points: 0
+            points: 0,
+            currentPoints: 0,
+            guess: '',
+            lastQuestion: false
         }
-        this.loopThrough = this.loopThrough.bind(this);
+        this.updateInputValue = this.updateInputValue.bind(this);
         this.verify = this.verify.bind(this);
+        this.incrementQuestion = this.incrementQuestion.bind(this);
+        this.checkForEnd = this.checkForEnd.bind(this);
     }
 
     componentDidMount() {
-        console.log(this.state);
+        // console.log(this.state);
     }
 
     componentDidUpdate() {
         console.log(this.state);
     }
-    
-    loopThrough() {
-        let arrayIndex = this.state.arrayIndex;
-        let arrayIndexPlus = arrayIndex + 1;
-        this.setState =({
-            arrayIndex: arrayIndexPlus
+
+
+    updateInputValue(event) {
+        this.setState({
+            guess: event.target.value
         })
-        console.log(arrayIndexPlus);
     }
 
-    verify(input) {
+    verify() {
         const index = this.state.arrayIndex;
-        const correctAnswer = this.props.questionData.slice(index, index + 2).map(question => question.answer);
-        const answerInput = input.value;
-        let feedback;
-        let points = 0;
-        if (answerInput === correctAnswer) {
-            feedback = 'Excellect! You are correct!';
-            points = points + 100;
+        const correctAnswer = this.props.questionData[index].answer;
+        if (this.state.guess === correctAnswer) {
+            return this.setState({
+                feedback: `Excellect! "` + correctAnswer + `" is correct!`,
+                points: this.state.points + 100,
+                currentPoints: 100
+            });
         }
         else {
-            feedback = `Good try! The correct answer is` + correctAnswer;
+            return this.setState({
+                feedback: `Good try! The correct answer is "` + correctAnswer + `"`
+            })
         }
+    }
 
+    incrementQuestion() {
+        // increment index:
+        let arrayIndex = this.state.arrayIndex;
+        let arrayIndexPlus = arrayIndex + 1;
         this.setState({
-            feedback,
-            points
-        });
+            arrayIndex: arrayIndexPlus,
+            feedback: '',
+            currentPoints: 0,
+            guess: ''
+        })
+        console.log("incrementQuestion ran");
+    }
+
+    checkForEnd() {
+        const i = this.state.arrayIndex;
+        const questionNum = this.props.questionData[i].questionNum;
+        const questionLength = this.props.questionData.length;
+        if (questionNum === questionLength) {
+            return this.setState({
+                lastQuestion: true
+            })
+        }
+        return this.state;
     }
 
     render() {
-        const index = this.state.arrayIndex;
-        const questionNum = this.props.questionData.slice(index, index + 1).map(question => question.questionNum);
+        const i = this.state.arrayIndex;
+        const questionNum = this.props.questionData[i].questionNum;
         const questionLength = this.props.questionData.length;
-
-        const question = this.props.questionData.slice(index, index + 1).map(question => question.question);
-        // const correctAnswer = this.props.questionData.slice(index, index + 2).map(question => question.answer);
+        const question = this.props.questionData[i].question;
+        const lastQuestion = this.state.lastQuestion;
 
         return (
             <section>
-                <Counter questionNum = {questionNum} questionLength = {questionLength}/>
+                <Counter 
+                    questionNum = {questionNum} 
+                    questionLength = {questionLength}/>
                 <h3>{question}</h3>
-                <ModuleForm handleClick = {this.loopThrough} verifyInput = {this.verify} />
-                <Feedback verify={this.verify} />
+                <ModuleForm 
+                    guess={this.state.guess} 
+                    handleChange= {this.updateInputValue} 
+                    verifyInput = {this.verify}
+                    handleLast={this.checkForEnd} />
+                <Feedback 
+                    feedback= {this.state.feedback}
+                    currentPoints={this.state.currentPoints} 
+                    points={this.state.points} 
+                    handleClick={this.incrementQuestion}
+                    lastQuestion = {lastQuestion} />
         </section>
         )
     }
