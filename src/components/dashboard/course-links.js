@@ -18,7 +18,7 @@ export class CourseLinks extends React.Component {
             >
                 <button level = "1">
                     <Link 
-                        to ='/learn/5ca54db1eebaf529016271aa'
+                        to ='/learn/5cad18e0eade2de40405be75'
                     >
                         Level 1
                     </Link>
@@ -27,7 +27,7 @@ export class CourseLinks extends React.Component {
                         level = "2"
                 >
                     <Link 
-                        to ='/learn/5ca54db1eebaf529016271a9'
+                        to ='/learn/5cad18e0eade2de40405be76'
                     >
                         Level 2
                     </Link>
@@ -36,7 +36,7 @@ export class CourseLinks extends React.Component {
                         level = "3"
                 >
                     <Link 
-                        to ='/learn/5ca54db1eebaf529016271a8'
+                        to ='/learn/5cad18e0eade2de40405be74'
                     >
                         Level 3
                     </Link>
