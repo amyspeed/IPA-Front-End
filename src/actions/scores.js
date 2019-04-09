@@ -28,16 +28,17 @@ export const fetchScores = () => (dispatch, getState) => {
         });
 };
 
-// export const PutScoresByUserId = () => (dispatch, getState) => {
-//     const authToken = getState().auth.authToken;
-//     return fetch(`${API_BASE_URL}/users/scores/${userId}`, {
-//         method: 'PUT',
-//         headers: { Authorization: `Bearer ${authToken}`}
-//     })
-//         .then(res => normalizeResponseErrors(res))
-//         .then(res => res.json())
-//         .then(({data}) => dispatch(fetchScoresSuccess(data)))
-//         .catch(err => {
-//             dispatch(fetchScoresError(err));
-//         });
-// };
+export const PutScoresByUserId = (userId, data) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/users/scores/${userId}`, {
+        method: 'PUT',
+        headers: { Authorization: `Bearer ${authToken}`},
+        body: JSON.stringify(data)
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then((data) => dispatch(fetchScoresSuccess(data)))
+        .catch(err => {
+            dispatch(fetchScoresError(err));
+        });
+};
