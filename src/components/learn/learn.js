@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchLevel } from '../../actions/levels';
 import requiresLogin from '../dashboard/requires-login';
 import Instructions from './instructions';
 import Module from './module';
-// import Main from './main';
 
 export class Learn extends React.Component {
     constructor(props) {
@@ -35,7 +35,7 @@ export class Learn extends React.Component {
         const questionData = this.props.level.questions;
         return (
             <div className="container">
-                <button>Exit Level</button>
+                <button><Link to="/">Exit Level</Link></button>
                 <h1>Level {this.props.level.level}</h1>
                 {this.state.completedInstructions ? 
                     <Module questionData={questionData} /> : 
