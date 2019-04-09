@@ -1,4 +1,5 @@
 import React from 'react';
+import ScoreButton from './save-score';
 
 export default class Feedback extends React.Component {
 
@@ -7,13 +8,12 @@ export default class Feedback extends React.Component {
         return (
             <div>
                 <h3>{feedback}</h3>
-                {currentPoints ? <p>{currentPoints} Points!</p> : null}
+                {currentPoints ? <p>{currentPoints} Points!!</p> : null}
                 {feedback && points ? <p>Your current score: {points}</p> : null}
                 {feedback && !lastQuestion ? 
                         <button onClick={handleClick}>Next Question</button>
                 : null}
-                {lastQuestion ? <button>Submit Score!!</button>
-                : null }
+                {lastQuestion ? <ScoreButton finalScore = {points} /> : null }
             </div>
         );
     }
