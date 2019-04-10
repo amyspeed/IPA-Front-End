@@ -15,8 +15,6 @@ export class LeaderBoard extends React.Component {
     }
     
     componentDidUpdate() {
-        console.log(this.props.allScores);
-        console.log(this.props.thisUserScores);
     }
 
     rankName(index) {
@@ -79,7 +77,7 @@ export class LeaderBoard extends React.Component {
 
         //Calculate User's Current Standing
         let topWinner = overallWinners.slice(0, 1).map(user => user.totalScore);
-        let currentStanding = Math.abs(topWinner - currentScore)
+        let currentStanding = Math.abs(topWinner - currentScore);
         
         return (
             <div>
