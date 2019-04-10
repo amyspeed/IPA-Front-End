@@ -3,13 +3,15 @@ import { connect } from 'react-redux';
 import * as R from 'ramda';
 import LeaderBoardView from './leader-board-view';
 import CurrentStanding from './current-standing';
-import { fetchScores } from '../../actions/scores';
+import { fetchScores, fetchScoresById } from '../../actions/scores';
 
 
 export class LeaderBoard extends React.Component {
     
     componentDidMount() {
+        const userId = this.props.userId
         this.props.dispatch(fetchScores());
+        this.props.dispatch(fetchScoresById(userId));
     }
     
     componentDidUpdate() {

@@ -9,31 +9,38 @@ export class ScoreButton extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    componentDidMount() {
-        console.log(this.props.userId);
-    }
-
     handleClick() {
         const { finalScore, userId, currentLevel } = this.props;
-        const data = {
-            [currentLevel]: finalScore
+        const putData = {
+            [currentLevel]: finalScore,
         }
-        console.log(data);
-        this.props.dispatch(PutScoresByUserId(userId, data));
+        this.props.dispatch(PutScoresByUserId(userId, putData));
+    }
+
+    componentDidUpdate() {
+        // const userId = this.props.userId;
+        // const { level1, level2, level3 } = this.props.userScores;
+        // const newTotal = Math.abs(level1 + level2 + level3);
+        // const putData = {
+        //     totalScore: newTotal
+        // }
+        // this.props.dispatch(PutScoresByUserId(userId, putData));
     }
 
     render() {
         return(
-            <button
-                onClick = {this.handleClick}>Submit Score!!</button>
+            <button>
+                <Link to="/" onClick = {this.handleClick}>Submit Score!!</Link>
+            </button>
         )
     }
 }
 
 const mapStateToProps = state => {
     return {
+        currentLevel: state.levels.data.level,
         userId: state.auth.currentUser.id,
-        currentLevel: state.levels.data.level
+        // userScores: state.auth.currentUser
     };
 }
 

@@ -7,16 +7,12 @@ import CourseLinks from './course-links';
 export class Dashboard extends React.Component {
 
     render() {
-        const authToken = this.props.authToken;
-        const totalScore = this.props.totalScore;
+        const userId = this.props.userId;
 
         return (
             <div className="container">
                 <h1>Welcome {this.props.firstName}!</h1>
-                <LeaderBoards 
-                    auth = {authToken}
-                    totalScore = {totalScore}
-                />
+                <LeaderBoards userId = {userId} />
                 <h2>Start learning!</h2>
                 <CourseLinks />
             </div>
@@ -27,7 +23,7 @@ export class Dashboard extends React.Component {
 const mapStateToProps = state => {
     return {
         firstName: state.auth.currentUser.firstName,
-        totalScore: state.auth.currentUser.totalScore
+        userId: state.auth.currentUser.id
     };
 };
 

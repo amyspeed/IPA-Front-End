@@ -1,11 +1,16 @@
 import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utils';
-//import userId from somewhere
 
 export const FETCH_SCORES_SUCCESS = 'FETCH_SCORES_SUCCESS';
 export const fetchScoresSuccess = allUsers => ({
     type: FETCH_SCORES_SUCCESS,
     allUsers
+});
+
+export const FETCH_ID_SCORES_SUCCESS = 'FETCH_ID_SCORES_SUCCESS';
+export const fetchIdScoresSuccess = thisUser => ({
+    type: FETCH_ID_SCORES_SUCCESS,
+    thisUser
 });
 
 export const FETCH_SCORES_ERROR = 'FETCH_SCORES_ERROR';
@@ -36,7 +41,7 @@ export const fetchScoresById = (userId) => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then((currentUserScores) => dispatch(fetchScoresSuccess(currentUserScores)))
+        .then((currentUserScores) => dispatch(fetchIdScoresSuccess(currentUserScores)))
         .catch(err => {
             dispatch(fetchScoresError(err));
         });
