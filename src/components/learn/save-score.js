@@ -11,25 +11,44 @@ export class ScoreButton extends React.Component {
     
     handleClick() {
         const { finalScore, userId, currentLevel } = this.props;
-        const { level1, level2, level3 } = this.props.userScores;
+        const { level1, level2, level3, totalScore } = this.props.userScores;
 
         //Calculate total score based on current level
         let newTotal;
+        let levelScore;
         if (currentLevel === "level1") {
-            newTotal = Math.abs(finalScore + level2 + level3)
-            console.log(newTotal, currentLevel)
+            if (finalScore > level1) {
+                levelScore = finalScore;
+                newTotal = Math.abs(finalScore + level2 + level3);
+            }
+            else {
+                levelScore = level1;
+                newTotal = totalScore;
+            }
         }
         else if (currentLevel === "level2") {
-            newTotal = Math.abs(level1 + finalScore + level3)
-            console.log(newTotal, currentLevel)
+            if (finalScore > level2) {
+                levelScore = finalScore;
+                newTotal = Math.abs(level1 + finalScore + level3);
+            }
+            else {
+                levelScore = level2;
+                newTotal = totalScore;
+            }
         }
         else {
-            newTotal = Math.abs(level1 + level2 + finalScore)
-            console.log(newTotal, currentLevel)
+            if (finalScore > level3) {
+                levelScore = finalScore;
+                newTotal = Math.abs(level1 + level2 + finalScore);
+            }
+            else {
+                levelScore = level3;
+                newTotal = totalScore;
+            }
         }
         
         const putData = {
-            [currentLevel]: finalScore,
+            [currentLevel]: levelScore,
             totalScore: newTotal
         }
 
@@ -42,9 +61,12 @@ export class ScoreButton extends React.Component {
 
     render() {
         return(
-            <button>
-                <Link to="/" onClick = {this.handleClick}>Submit Score!!</Link>
-            </button>
+            <div>
+                <button>
+                    <Link to="/" onClick = {this.handleClick}>Submit Score!!</Link>
+                </button>
+                <p>(Your highest score will be saved)</p>
+            </div>
         )
     }
 }

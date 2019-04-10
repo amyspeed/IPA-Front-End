@@ -30,13 +30,28 @@ export class Learn extends React.Component {
         })
     }
 
+    levelName() {
+        // if (this.props.level.level === 'level1') {
+        //     return 'Level 1'
+        // }
+        // if (this.props.level.level === 'level2') {
+        //     return 'Level 2'
+        // }
+        // return 'Level 3'
+        const levelName = JSON.stringify(this.props.level.level);
+        console.log(levelName);
+        const string = "string1";
+        const lastCharacter = string.charAt(string.length -1);
+        console.log(lastCharacter);
+    }
+
     render() {
         const instructions = this.props.level.instructions;
         const questionData = this.props.level.questions;
         return (
             <div className="container">
                 <button><Link to="/">Exit Level</Link></button>
-                <h1>Level {this.props.level.level}</h1>
+                <h1>Level {this.levelName()}</h1>
                 {this.state.completedInstructions ? 
                     <Module questionData={questionData} /> : 
                     <Instructions instructions={instructions} handleClick={this.completeInstructions} /> }

@@ -23,12 +23,12 @@ export class CourseLinks extends React.Component {
                 </button>
                 <button disabled={this.props.pristine || this.props.submitting}
                         level = "2"
-                >
-                    <Link
+                > Level 2
+                    {/* <Link
                         to ='/learn/5cad18e0eade2de40405be76'
                     >
                         Level 2
-                    </Link>
+                    </Link> */}
                 </button>
                 <button disabled={this.props.pristine || this.props.submitting}
                         level = "3"
