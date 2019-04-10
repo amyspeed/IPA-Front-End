@@ -75,7 +75,7 @@ export class LeaderBoard extends React.Component {
         ]);
         const overallWinners = totalScoresSort(allData);
 
-        const currentScore = this.props.thisUserScores.totalScore;
+        const currentScore = this.props.thisUserTotal;
 
         //Calculate User's Current Standing
         let topWinner = overallWinners.slice(0, 1).map(user => user.totalScore);
@@ -102,7 +102,7 @@ export class LeaderBoard extends React.Component {
 const mapStateToProps = state => {
     return {
         allScores: state.scores.allUsers,
-        thisUserScores: state.scores.thisUser
+        thisUserTotal: state.scores.thisUser.totalScore
     };
 };
 
