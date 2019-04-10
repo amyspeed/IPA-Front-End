@@ -10,14 +10,14 @@ export default class CurrentStanding extends React.Component {
     scoreFromTop() {
         const standing = this.props.currentStanding;
         if (standing === 0) {
-            return <h2>You hold the GOLD metal!!</h2>
-        } else return <h2>You are {this.props.currentStanding} points away from the top score.</h2>
+            return <h3>You hold the GOLD metal!!</h3>
+        } else return <h3>You are {this.props.currentStanding} points away from the top score.</h3>
     }
 
     render() {
         return (
             <div>
-                <h2> Your current total score is {this.props.currentScore}!</h2>
+                <h3> Your current total score is {this.props.currentScore}!</h3>
                 {this.scoreFromTop()}
             </div>
         );

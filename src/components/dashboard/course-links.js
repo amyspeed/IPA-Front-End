@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { reduxForm, focus } from 'redux-form';
 import { fetchLevel } from '../../actions/levels';
-// import learn from '../learn/learn';
-// import { fetchLevel1 } from '../../actions/levels';
 
 export class CourseLinks extends React.Component {
     onSelect(levelId) {
@@ -26,7 +24,7 @@ export class CourseLinks extends React.Component {
                 <button disabled={this.props.pristine || this.props.submitting}
                         level = "2"
                 >
-                    <Link 
+                    <Link
                         to ='/learn/5cad18e0eade2de40405be76'
                     >
                         Level 2
