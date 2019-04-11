@@ -53,7 +53,9 @@ export class ScoreButton extends React.Component {
         }
 
         this.props.dispatch(PutScoresByUserId(userId, putData));
-        console.log("put current", putData);
+        console.log("PUT data", putData);
+
+        return levelScore || "";
     };
 
     componentDidUpdate() {
@@ -65,7 +67,7 @@ export class ScoreButton extends React.Component {
                 <button>
                     <Link to="/" onClick = {this.handleClick}>Submit Score!!</Link>
                 </button>
-                <p>(Your highest score will be saved)</p>
+                <p>Your highest score of {this.handleClick()} will be saved</p>
             </div>
         )
     }
