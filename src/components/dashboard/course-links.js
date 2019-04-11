@@ -1,19 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { reduxForm, focus } from 'redux-form';
 import { fetchLevel } from '../../actions/levels';
+import { connect } from 'react-redux';
 
 export class CourseLinks extends React.Component {
     onSelect(levelId) {
         return this.props.dispatch(fetchLevel(levelId))
     }
 
+    determineDisabled(id) {
+        const { level1, level2} = this.props.levelScores;
+        console.log(level1, level2);
+        if (id === 2) {
+            if (level1 > 0) {
+                return false;
+            }
+            return true;
+        }
+        else {
+            if (level2 > 0) {
+                return false;
+            }
+            return true
+        }
+
+    }
+
     render() {
         return (            
-            <form className="learn-form"
-                    onSelect={this.props.handleSubmit(levelId =>
-                        this.onSelect(levelId))}
-            >
+            <form>
                 <button level = "1">
                     <Link 
                         to ='/learn/5cad18e0eade2de40405be75'
@@ -21,30 +36,33 @@ export class CourseLinks extends React.Component {
                         Level 1
                     </Link>
                 </button>
-                <button disabled={this.props.pristine || this.props.submitting}
-                        level = "2"
-                > Level 2
-                    {/* <Link
-                        to ='/learn/5cad18e0eade2de40405be76'
-                    >
-                        Level 2
-                    </Link> */}
-                </button>
-                <button disabled={this.props.pristine || this.props.submitting}
-                        level = "3"
-                >
-                    <Link 
-                        to ='/learn/5cad18e0eade2de40405be74'
-                    >
-                        Level 3
-                    </Link>
-                </button>
+                {this.determineDisabled(2) ? <><p>Complete level 1 to unlock level 2</p><button disabled = "true">Level 2</button></> :
+                    <button>
+                                <Link
+                                    to ='/learn/5cad18e0eade2de40405be76'
+                                >
+                                    Level 2
+                                </Link>
+                    </button>
+                }
+                {this.determineDisabled(3) ? <><p>Complete level 2 to unlock level 3</p><button disabled = "true">Level 3</button></> :
+                    <button>
+                                <Link
+                                    to ='/learn/5cad18e0eade2de40405be74'
+                                >
+                                    Level 3
+                                </Link>
+                    </button>
+                }
             </form>
         );
     }
 };
 
-export default reduxForm({
-    form: 'fetchLevel',
-    onSubmitFail: (errors, dispatch) => dispatch(focus('fetchLevel', 'levelId'))
-})(CourseLinks);
+const mapStateToProps = state => {
+    return {
+        levelScores: state.scores.thisUser
+    }
+}
+
+export default connect(mapStateToProps)(CourseLinks);
