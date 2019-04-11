@@ -20,15 +20,6 @@ export default class Module extends React.Component {
         this.checkForEnd = this.checkForEnd.bind(this);
     }
 
-    componentDidMount() {
-        // console.log(this.state);
-    }
-
-    componentDidUpdate() {
-        console.log(this.state);
-    }
-
-
     updateInputValue(event) {
         this.setState({
             guess: event.target.value
@@ -62,7 +53,6 @@ export default class Module extends React.Component {
             currentPoints: 0,
             guess: ''
         })
-        console.log("incrementQuestion ran");
     }
 
     checkForEnd() {

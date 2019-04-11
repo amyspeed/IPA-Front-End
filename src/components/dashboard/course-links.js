@@ -10,7 +10,6 @@ export class CourseLinks extends React.Component {
 
     determineDisabled(id) {
         const { level1, level2} = this.props.levelScores;
-        console.log(level1, level2);
         if (id === 2) {
             if (level1 > 0) {
                 return false;

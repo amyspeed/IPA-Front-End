@@ -21,10 +21,6 @@ export class Learn extends React.Component {
         this.props.dispatch(fetchLevel(this.props.match.params.id));
     }
 
-    componentDidUpdate() {
-        console.log(this.state);
-    }
-
     completeInstructions() {
         this.setState({
             completedInstructions: true
@@ -34,7 +30,6 @@ export class Learn extends React.Component {
     getLevelNum() {
         const levelName = this.props.level.level || "";
         const levelNum = levelName.charAt(levelName.length -1);
-        console.log(levelNum)
         return levelNum;
     }
 

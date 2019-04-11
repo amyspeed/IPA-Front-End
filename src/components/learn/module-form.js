@@ -12,10 +12,6 @@ export default class ModuleForm extends React.Component {
         this.props.handleLast();
     }
 
-    componentDidUpdate() {
-        console.log(this.state);
-    }
-
     render() {
         return (
             <form onSubmit={e => this.handleSubmit(e)}>
