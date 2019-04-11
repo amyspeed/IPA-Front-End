@@ -35,7 +35,7 @@ export class CourseLinks extends React.Component {
                         Level 1
                     </Link>
                 </button>
-                {this.determineDisabled(2) ? <><p>Complete level 1 to unlock level 2</p><button disabled = "true">Level 2</button></> :
+                {this.determineDisabled(2) ? <><p>Complete level 1 to unlock level 2</p><button disabled = {true}>Level 2</button></> :
                     <button>
                                 <Link
                                     to ='/learn/5cad18e0eade2de40405be76'
@@ -44,7 +44,7 @@ export class CourseLinks extends React.Component {
                                 </Link>
                     </button>
                 }
-                {this.determineDisabled(3) ? <><p>Complete level 2 to unlock level 3</p><button disabled = "true">Level 3</button></> :
+                {this.determineDisabled(3) ? <><p>Complete level 2 to unlock level 3</p><button disabled = {true}>Level 3</button></> :
                     <button>
                                 <Link
                                     to ='/learn/5cad18e0eade2de40405be74'
