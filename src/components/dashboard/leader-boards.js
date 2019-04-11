@@ -73,16 +73,19 @@ export class LeaderBoard extends React.Component {
         ]);
         const overallWinners = totalScoresSort(allData);
 
-        const currentScore = this.props.thisUserTotal;
+        const { level1, level2, level3, totalScore } = this.props.thisUserScores;
 
         //Calculate User's Current Standing
         let topWinner = overallWinners.slice(0, 1).map(user => user.totalScore);
-        let currentStanding = Math.abs(topWinner - currentScore);
+        let currentStanding = Math.abs(topWinner - totalScore);
         
         return (
             <div>
                 <CurrentStanding 
-                    currentScore = {currentScore} 
+                    level1 = {level1}
+                    level2 = {level2}
+                    level3 = {level3}
+                    totalScore = {totalScore} 
                     currentStanding = {currentStanding} 
                 />
                 <LeaderBoardView 
@@ -100,7 +103,7 @@ export class LeaderBoard extends React.Component {
 const mapStateToProps = state => {
     return {
         allScores: state.scores.allUsers,
-        thisUserTotal: state.scores.thisUser.totalScore
+        thisUserScores: state.scores.thisUser
     };
 };
 

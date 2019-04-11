@@ -4,7 +4,7 @@ export default class LeaderBoardView extends React.Component {
     render() {
         return (
             <section>
-                <h3>Overall Top Scores</h3>
+                <h2>Overall Top Scores</h2>
                 <table>
                 <tbody>
                     <tr>
@@ -20,7 +20,7 @@ export default class LeaderBoardView extends React.Component {
                     </tr>))}
                 </tbody>
                 </table>
-                <h3>Level 1 Top Scores</h3>               
+                <h2>Level 1 Top Scores</h2>      
                 <table>
                 <tbody>
                     <tr>
@@ -36,7 +36,7 @@ export default class LeaderBoardView extends React.Component {
                     </tr>))}
                 </tbody>
                 </table>
-                <h3>Level 2 Top Scores</h3>
+                <h2>Level 2 Top Scores</h2>
                 <table>
                 <tbody>
                     <tr>
@@ -52,7 +52,7 @@ export default class LeaderBoardView extends React.Component {
                     </tr>))}
                 </tbody>
                 </table>
-                <h3>Level 3 Top Scores</h3>
+                <h2>Level 3 Top Scores</h2>
                 <table>
                 <tbody>
                     <tr>
