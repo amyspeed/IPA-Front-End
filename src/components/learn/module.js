@@ -104,4 +104,4 @@ export default class Module extends React.Component {
         </section>
         )
     }
-}
+};

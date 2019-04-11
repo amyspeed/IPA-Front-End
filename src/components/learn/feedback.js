@@ -9,7 +9,7 @@ export default class Feedback extends React.Component {
             <div>
                 <h3>{feedback}</h3>
                 {currentPoints ? <p>{currentPoints} Points!!</p> : null}
-                {feedback && points ? <p>Your current score: {points}</p> : null}
+                {feedback ? <p>Your current score: {points}</p> : null}
                 {feedback && !lastQuestion ? 
                         <button onClick={handleClick}>Next Question</button>
                 : null}
