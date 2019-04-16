@@ -13,7 +13,7 @@ export default class LeaderBoardView extends React.Component {
                         <th>Score</th>
                     </tr> 
                     {this.props.overallWinners.slice(0, 5).map((user, index) =>(
-                    <tr>                  
+                    <tr key = {index} >                  
                         <td>{this.props.rankName(index)}</td>
                         <td>{user.username}</td>
                         <td>{user.totalScore}</td>
@@ -29,7 +29,7 @@ export default class LeaderBoardView extends React.Component {
                         <th>Score</th>
                     </tr> 
                     {this.props.level1Winners.slice(0, 5).map((user, index) => (
-                    <tr>                  
+                    <tr key = {index} >                  
                         <td>{this.props.rankName(index)}</td>
                         <td>{user.username}</td>
                         <td>{user.level1}</td>
@@ -45,7 +45,7 @@ export default class LeaderBoardView extends React.Component {
                         <th>Score</th>
                     </tr> 
                     {this.props.level2Winners.slice(0, 5).map((user, index) =>(
-                    <tr>                  
+                    <tr key = {index} >                  
                         <td>{this.props.rankName(index)}</td>
                         <td>{user.username}</td>
                         <td>{user.level2}</td>
@@ -61,7 +61,7 @@ export default class LeaderBoardView extends React.Component {
                         <th>Score</th>
                     </tr> 
                     {this.props.level3Winners.slice(0, 5).map((user, index) =>(
-                    <tr>                  
+                    <tr key = {index} >                  
                         <td>{this.props.rankName(index)}</td>
                         <td>{user.username}</td>
                         <td>{user.level3}</td>
