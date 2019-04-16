@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 import Counter from './counter';
 import ModuleForm from './module-form';
 import Feedback from './feedback';
@@ -30,6 +31,7 @@ export default class Module extends React.Component {
         const index = this.state.arrayIndex;
         const correctAnswer = this.props.questionData[index].answer;
         if (this.state.guess === correctAnswer) {
+            toast("100 Points!!!")
             return this.setState({
                 feedback: `Excellect! "` + correctAnswer + `" is correct!`,
                 points: this.state.points + 100,
@@ -37,6 +39,7 @@ export default class Module extends React.Component {
             });
         }
         else {
+            toast("Sorry YOU'RE WRONG!!!");
             return this.setState({
                 feedback: `Good try! The correct answer is "` + correctAnswer + `"`
             })
@@ -84,13 +87,14 @@ export default class Module extends React.Component {
                     guess={this.state.guess} 
                     handleChange= {this.updateInputValue} 
                     verifyInput = {this.verify}
-                    handleLast={this.checkForEnd} />
+                    handleLast={this.checkForEnd}
+                    currentPoints={this.state.currentPoints} />
                 <Feedback 
-                    feedback= {this.state.feedback}
-                    currentPoints={this.state.currentPoints} 
+                    feedback= {this.state.feedback} 
                     points={this.state.points} 
                     handleClick={this.incrementQuestion}
-                    lastQuestion = {lastQuestion} />
+                    lastQuestion = {lastQuestion}
+                    currentPoints={this.state.currentPoints} />
         </section>
         )
     }
