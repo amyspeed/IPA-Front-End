@@ -5,6 +5,7 @@ import { fetchLevel } from '../../actions/levels';
 import requiresLogin from '../dashboard/requires-login';
 import Instructions from './instructions';
 import Module from './module';
+import './learn.css';
 
 export class Learn extends React.Component {
     constructor(props) {
@@ -38,7 +39,7 @@ export class Learn extends React.Component {
         const instructions = this.props.level.instructions;
         const questionData = this.props.level.questions;
         return (
-            <div className="container">
+            <div className="learn">
                 <button><Link to="/">Exit Level</Link></button>
                 <h1>Level {this.getLevelNum()}</h1>
                 {this.state.completedInstructions ? 

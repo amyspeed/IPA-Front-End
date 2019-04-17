@@ -1,6 +1,6 @@
 .App {
   text-align: left;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 15px;
 }
 
@@ -25,3 +25,8 @@ h3 {
   font-family: "Times New Roman", Times, serif;
   font-size: 25px;
 }
+
+/* form {
+  background-color: white;
+  width: 50%;
+} */

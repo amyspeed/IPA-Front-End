@@ -13,7 +13,7 @@ export class ScoreButton extends React.Component {
         const { finalScore, userId, currentLevel } = this.props;
         const { level1, level2, level3, totalScore } = this.props.userScores;
 
-        //Calculate total score based on current level
+        //Calculate total score based on current level and high score
         let newTotal;
         let levelScore;
         if (currentLevel === "level1") {

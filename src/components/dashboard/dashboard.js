@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import LeaderBoards from './leader-boards';
 import CourseLinks from './course-links';
+import './dashboard.css';
 
 export class Dashboard extends React.Component {
 
@@ -10,7 +11,7 @@ export class Dashboard extends React.Component {
         const userId = this.props.userId;
 
         return (
-            <div className="container">
+            <div className="dashboard">
                 <h1>Welcome, {this.props.firstName}!</h1>
                 <h2>Start learning...</h2>
                 <CourseLinks />

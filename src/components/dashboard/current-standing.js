@@ -23,7 +23,7 @@ export default class CurrentStanding extends React.Component {
         if (isNaN(this.props.currentStanding)) {
             console.log(this.props.currentStanding)
         } else if (this.props.currentStanding === 0) { 
-            toast("🏆 You have achieved the TOP SCORE!! 👑")
+            toast("👑 You have achieved the TOP SCORE!!")
         } else { 
             toast(`You are ${this.props.currentStanding} points away from the top score... 🚀`)
         }

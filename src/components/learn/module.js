@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import Counter from './counter';
 import ModuleForm from './module-form';
 import Feedback from './feedback';
+import './module.css';
 
 export default class Module extends React.Component {
     constructor(props) {
@@ -77,7 +78,7 @@ export default class Module extends React.Component {
         const question = this.props.questionData[i].question;
 
         return (
-            <section>
+            <div class="module">
                 <Counter 
                     questionNum = {questionNum} 
                     questionLength = {questionLength}/>
@@ -93,7 +94,7 @@ export default class Module extends React.Component {
                     points={this.state.points} 
                     handleClick={this.incrementQuestion}
                     lastQuestion = {this.state.lastQuestion} />
-        </section>
+            </div>
         )
     }
 };

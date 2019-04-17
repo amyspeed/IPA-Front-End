@@ -15,7 +15,7 @@ export function Landing(props) {
     }
     
     return (
-        <div className = "container">
+        <div className = "landing">
             <Welcome />
             <Register />
             <h2>Already Registered? Sign in:</h2>
