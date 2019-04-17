@@ -31,7 +31,7 @@ export default class Module extends React.Component {
         const index = this.state.arrayIndex;
         const correctAnswer = this.props.questionData[index].answer;
         if (this.state.guess === correctAnswer) {
-            toast("100 Points!!!")
+            toast.warning("🏆 100 Points!!! 🌟", {position: "top-center", autoClose: 2500})
             return this.setState({
                 feedback: `Excellect! "` + correctAnswer + `" is correct!`,
                 points: this.state.points + 100,
@@ -39,7 +39,7 @@ export default class Module extends React.Component {
             });
         }
         else {
-            toast("Sorry YOU'RE WRONG!!!");
+            toast.error("🤷🏻‍ Oops! Incorrect... 💩", {position: "top-center", autoClose: 2500});
             return this.setState({
                 feedback: `Good try! The correct answer is "` + correctAnswer + `"`
             })

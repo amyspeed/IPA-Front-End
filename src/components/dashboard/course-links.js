@@ -4,6 +4,11 @@ import { fetchLevel } from '../../actions/levels';
 import { connect } from 'react-redux';
 
 export class CourseLinks extends React.Component {
+    constructor(props) {
+        super(props);
+        this.determineDisabled = this.determineDisabled.bind(this);
+    }
+
     onSelect(levelId) {
         return this.props.dispatch(fetchLevel(levelId))
     }

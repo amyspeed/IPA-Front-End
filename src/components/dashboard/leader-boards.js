@@ -20,23 +20,23 @@ export class LeaderBoard extends React.Component {
 
     rankName(index) {
         if (index === 0) {
-            return "GOLD"
+            return "🥇 GOLD"
         }
 
         if (index === 1) {
-            return "SILVER"
+            return "🥈 SILVER"
         }
 
         if (index === 2) {
-            return "BRONZE"
+            return "🥉 BRONZE"
         }
 
         if (index === 3) {
-            return 4
+            return "🤷🏾‍ 4"
         }
 
         if (index === 4) {
-            return 5
+            return "🤦🏻‍♂️ 5"
         }
 
         return index + 1;

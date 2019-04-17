@@ -1,9 +1,12 @@
 import React from 'react';
+import success from '../../images/marginalia-success.png';
+import downloading from '../../images/marginalia-downloading.png';
 
 export default class LeaderBoardView extends React.Component {
     render() {
         return (
             <section>
+                <img src={success} alt="first place champion" />
                 <h2>Overall Top Scores</h2>
                 <table>
                 <tbody>
@@ -20,6 +23,7 @@ export default class LeaderBoardView extends React.Component {
                     </tr>))}
                 </tbody>
                 </table>
+                <img src={downloading} alt="successful weightlifter" />
                 <h2>Level 1 Top Scores</h2>      
                 <table>
                 <tbody>
