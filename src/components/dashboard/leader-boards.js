@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as R from 'ramda';
+
 import LeaderBoardView from './leader-board-view';
 import CurrentStanding from './current-standing';
 import { fetchScores, fetchScoresById } from '../../actions/scores';
