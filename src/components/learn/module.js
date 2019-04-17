@@ -75,26 +75,24 @@ export default class Module extends React.Component {
         const questionNum = this.props.questionData[i].questionNum;
         const questionLength = this.props.questionData.length;
         const question = this.props.questionData[i].question;
-        const lastQuestion = this.state.lastQuestion;
 
         return (
             <section>
                 <Counter 
                     questionNum = {questionNum} 
                     questionLength = {questionLength}/>
-                <h3>{question}</h3>
+                <h3 id="question">{question}</h3>
                 <ModuleForm 
                     guess={this.state.guess} 
                     handleChange= {this.updateInputValue} 
                     verifyInput = {this.verify}
                     handleLast={this.checkForEnd}
-                    currentPoints={this.state.currentPoints} />
+                    feedback={this.state.feedback} />
                 <Feedback 
                     feedback= {this.state.feedback} 
                     points={this.state.points} 
                     handleClick={this.incrementQuestion}
-                    lastQuestion = {lastQuestion}
-                    currentPoints={this.state.currentPoints} />
+                    lastQuestion = {this.state.lastQuestion} />
         </section>
         )
     }

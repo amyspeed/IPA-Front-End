@@ -6,6 +6,7 @@ import Welcome from './welcome';
 import Register from './register';
 import LogIn from './login';
 import Demo from './demo';
+import './landing.css';
 
 export function Landing(props) {
     if (props.loggedIn) {
@@ -16,7 +17,6 @@ export function Landing(props) {
     return (
         <div className = "container">
             <Welcome />
-            <h2>Sign up for a new account:</h2>
             <Register />
             <h2>Already Registered? Sign in:</h2>
             <LogIn />

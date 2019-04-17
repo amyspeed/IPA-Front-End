@@ -26,9 +26,11 @@ export default class ModuleForm extends React.Component {
                         id="answer"
                         required
                     />
+                    {this.props.feedback ? '' :
                     <button>
                         Submit
                     </button>
+                    }
                 </form>
         )
     }

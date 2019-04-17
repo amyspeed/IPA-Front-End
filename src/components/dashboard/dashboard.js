@@ -11,8 +11,8 @@ export class Dashboard extends React.Component {
 
         return (
             <div className="container">
-                <h1>Welcome {this.props.firstName}!</h1>
-                <h2>Start learning!</h2>
+                <h1>Welcome, {this.props.firstName}!</h1>
+                <h2>Start learning...</h2>
                 <CourseLinks />
                 <LeaderBoards userId = {userId} />
             </div>

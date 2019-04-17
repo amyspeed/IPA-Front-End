@@ -39,9 +39,9 @@ export default class CurrentStanding extends React.Component {
             <div>
                 {renderNow}
                 <h3> Your current total score is {this.props.totalScore}!</h3>
-                <h4>Level 1: {this.props.level1}</h4>
-                <h4>Level 2: {this.props.level2}</h4>
-                <h4>Level 3: {this.props.level3}</h4>
+                <p>Level 1: {this.props.level1}</p>
+                <p>Level 2: {this.props.level2}</p>
+                <p>Level 3: {this.props.level3}</p>
             </div>
         );
     }
