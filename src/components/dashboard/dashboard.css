@@ -1,3 +1,7 @@
 .dashboard {
     background-color: rgb(246, 225, 255);
 }
+
+.level-button {
+    width: 100%;
+}

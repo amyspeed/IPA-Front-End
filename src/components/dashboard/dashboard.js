@@ -12,9 +12,19 @@ export class Dashboard extends React.Component {
 
         return (
             <div className="dashboard">
-                <h1>Welcome, {this.props.firstName}!</h1>
-                <h2>Start learning...</h2>
-                <CourseLinks />
+                <div className="row">
+                    <div className="col-12">
+                        <h1>Welcome, {this.props.firstName}!</h1>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-12">
+                        <h2>Start learning...</h2>
+                    </div>
+                </div>
+                <div className="row">
+                    <CourseLinks />
+                </div>
                 <LeaderBoards userId = {userId} />
             </div>
         );

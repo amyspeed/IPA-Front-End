@@ -10,6 +10,7 @@ import Learn from './learn/learn';
 
 import { refreshAuthToken } from '../actions/auth';
 import './App.css';
+import './float-grid.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 class App extends React.Component {

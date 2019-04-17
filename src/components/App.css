@@ -7,6 +7,7 @@
 h1 {
   font-family: 'Alice', serif;
   font-size: 40px;
+  text-align: center;
 }
 
 h2 {
@@ -26,7 +27,21 @@ h3 {
   font-size: 25px;
 }
 
-/* form {
+.box-image {
+  width: 100%;
+}
+
+.box {
   background-color: white;
-  width: 50%;
-} */
+  margin-top: 0;
+  padding-top: 1px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+  max-height: 400px;
+  min-height: 350px;
+}
+
+.scores {
+  /* margin: auto; */
+}
