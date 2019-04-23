@@ -39,37 +39,22 @@ export class CourseLinks extends React.Component {
         return (            
             <div>
                 <div className="col-4">
-                <button className="levelButton enable" level = "1">
-                    <Link 
-                        className="link"
-                        to ='/learn/5cad18e0eade2de40405be75'
-                    >
-                        Level 1 
-                    </Link>
-                </button>
+                <Link to ='/learn/5cad18e0eade2de40405be75'>
+                    <button className="levelButton enable">Level 1</button>
+                </Link>
                 </div>
                 <div className="col-4">
                 {this.determineDisabled(2) ? <button className="levelButton disabled" onClick={x => this.toastButton(1)}>Level 2</button> :
-                    <button className="levelButton enable">
-                                <Link
-                                    className="link"
-                                    to ='/learn/5cad18e0eade2de40405be76'
-                                >
-                                    Level 2
-                                </Link>
-                    </button>
+                    <Link to ='/learn/5cad18e0eade2de40405be76'>
+                        <button className="levelButton enable">Level 2</button>
+                    </Link>
                 }
                 </div>
                 <div className="col-4">
                 {this.determineDisabled(3) ? <button className="levelButton disabled" onClick={x => this.toastButton(2)}>Level 3</button> :
-                    <button className="levelButton enable">
-                                <Link
-                                    className="link"
-                                    to ='/learn/5cad18e0eade2de40405be74'
-                                >
-                                    Level 3
-                                </Link>
-                    </button>
+                    <Link to ='/learn/5cad18e0eade2de40405be74'>
+                        <button className="levelButton enable">Level 3</button>
+                    </Link>
                 }
                 </div>
             </div>

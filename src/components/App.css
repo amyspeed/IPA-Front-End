@@ -89,11 +89,6 @@ button {
   cursor: pointer;
 }
 
-.link {
-  color: black;
-  text-decoration: none;
-}
-
 .disabled {
   color: graytext;
 }

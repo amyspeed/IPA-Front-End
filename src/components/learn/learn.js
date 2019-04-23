@@ -41,7 +41,7 @@ export class Learn extends React.Component {
         return (
             <div className="learn">
                 <div className="top-button">
-                    <button><Link className="link" to="/">Exit Level</Link></button>
+                    <Link className="link" to="/"><button>Exit Level</button></Link>
                 </div>
                 <h1>Level {this.getLevelNum()}</h1>
                 <div className="row">
