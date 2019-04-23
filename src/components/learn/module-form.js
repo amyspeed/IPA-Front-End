@@ -27,7 +27,7 @@ export default class ModuleForm extends React.Component {
                         required
                     />
                     {this.props.feedback ? '' :
-                    <button>
+                    <button className="module-buttons">
                         Submit
                     </button>
                     }

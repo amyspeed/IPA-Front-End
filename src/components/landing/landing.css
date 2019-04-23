@@ -1,5 +1,5 @@
 .landing {
-    background-color: rgb(196, 218, 255);
+    background-image: linear-gradient(rgb(196, 218, 255), rgba(196, 218, 255, 0.591));
     padding-bottom: 100px;
 }
 

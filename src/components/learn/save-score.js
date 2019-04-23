@@ -64,10 +64,10 @@ export class ScoreButton extends React.Component {
     render() {
         return(
             <div>
-                <button>
+                <button className="module-buttons">
                     <Link className="link" to="/" onClick = {this.handleClick}>Submit Score!!</Link>
                 </button>
-                <p class="note">Your highest score of {this.handleClick()} will be saved</p>
+                <p className="note">Your highest score of {this.handleClick()} will be saved</p>
             </div>
         )
     }

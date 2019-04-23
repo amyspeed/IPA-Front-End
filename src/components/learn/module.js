@@ -78,7 +78,7 @@ export default class Module extends React.Component {
         const question = this.props.questionData[i].question;
 
         return (
-            <div className="box learn-box">
+            <div className="box module-box">
                 <Counter 
                     questionNum = {questionNum} 
                     questionLength = {questionLength}/>

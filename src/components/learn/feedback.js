@@ -11,7 +11,7 @@ export default class Feedback extends React.Component {
                 <h3>{feedback}</h3>
                 {feedback ? <p>Your current score: {points}</p> : null}
                 {feedback && !lastQuestion ? 
-                        <button onClick={handleClick}>Next Question</button>
+                        <button className="module-buttons" onClick={handleClick}>Next Question</button>
                 : null}
                 {lastQuestion ? <ScoreButton finalScore = {points} /> : null }
             </div>

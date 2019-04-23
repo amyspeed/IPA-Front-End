@@ -4,7 +4,7 @@ import study from '../../images/marginalia-productive-work.png';
 export default class Instructions extends React.Component {
     render() {
         return (
-            <div className="box learn-box">
+            <div className="box instruction-box">
                 <p>{this.props.instructions}</p>
                 <div className="center-button">
                     <button onClick={this.props.handleClick}>Let's Go!</button>
