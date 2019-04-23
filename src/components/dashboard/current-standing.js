@@ -15,7 +15,7 @@ export default class CurrentStanding extends React.Component {
             this.setState({
                 renderStanding: true
             })
-    }.bind(this), 50)
+    }.bind(this), 500)
     }
 
     toastStanding() {
@@ -23,9 +23,9 @@ export default class CurrentStanding extends React.Component {
         if (isNaN(this.props.currentStanding)) {
             console.log(this.props.currentStanding)
         } else if (this.props.currentStanding === 0) { 
-            toast("👑 You have achieved the TOP SCORE!!")
+            toast("👑 You have achieved the TOP SCORE!!", {position: "top-center"})
         } else { 
-            toast(`You are ${this.props.currentStanding} points away from the top score... 🚀`)
+            toast(`You are ${this.props.currentStanding} points away from the top score... 🚀`, {position: "top-center"})
         }
     }
 
@@ -39,16 +39,24 @@ export default class CurrentStanding extends React.Component {
             <div className="row">
                 {renderNow}
                 <div className="col-12">
-                    <h3> Your current total score is {this.props.totalScore}!</h3>
+                    <div className="total-score">
+                        <h3> Your current total score is {this.props.totalScore}!</h3>
+                    </div>
                 </div>
                 <div className="col-4">
-                    <p>Level 1: {this.props.level1}</p>
+                    <div className="level-score">
+                        <h3>Level 1: {this.props.level1} points</h3>
+                    </div>
                 </div>
                 <div className="col-4">
-                    <p>Level 2: {this.props.level2}</p>
+                    <div className="level-score">
+                        <h3>Level 2: {this.props.level2} points</h3>
+                    </div>
                 </div>
                 <div className="col-4">
-                    <p>Level 3: {this.props.level3}</p>
+                    <div className="level-score">
+                        <h3>Level 3: {this.props.level3} points</h3>
+                    </div>
                 </div>
             </div>
         );

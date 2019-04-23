@@ -44,10 +44,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <Nav />
+        <main role="main">
         <Route exact path="/" component={Landing} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route path="/learn/:id" component={Learn} />
         <ToastContainer />
+        </main>
       </div>
     );
   }

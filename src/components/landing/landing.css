@@ -1,3 +1,12 @@
 .landing {
-    background-color: rgb(228, 240, 254);
+    background-color: rgb(196, 218, 255);
+    padding-bottom: 100px;
+}
+
+.landing-inputs {
+    width: 85%;
+}
+
+.landing-buttons {
+    width: 85%;
 }

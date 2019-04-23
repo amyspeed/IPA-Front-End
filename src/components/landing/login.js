@@ -18,7 +18,7 @@ export class LogIn extends React.Component {
         }
         return (            
             <form
-                className="login-form"
+                className="box-content"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}
@@ -39,7 +39,7 @@ export class LogIn extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}>
+                <button className="landing-buttons" disabled={this.props.pristine || this.props.submitting}>
                     Log In
                 </button>
             </form>

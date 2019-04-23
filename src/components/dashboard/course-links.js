@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { fetchLevel } from '../../actions/levels';
 import { connect } from 'react-redux';
+import { toast } from 'react-toastify';
 
 export class CourseLinks extends React.Component {
     constructor(props) {
@@ -30,22 +31,28 @@ export class CourseLinks extends React.Component {
 
     }
 
+    toastButton(id) {
+        toast(`You must complete level ${id} to unlock this level`)
+    }
+
     render() {
         return (            
-            <form>
+            <div>
                 <div className="col-4">
-                <button className="levelButton" level = "1">
+                <button className="levelButton enable" level = "1">
                     <Link 
+                        className="link"
                         to ='/learn/5cad18e0eade2de40405be75'
                     >
-                        Level 1
+                        Level 1 
                     </Link>
                 </button>
                 </div>
                 <div className="col-4">
-                {this.determineDisabled(2) ? <><p>Complete level 1 to unlock level 2</p><button className="levelButton" disabled = {true}>Level 2</button></> :
-                    <button className="levelButton">
+                {this.determineDisabled(2) ? <button className="levelButton disabled" onClick={x => this.toastButton(1)}>Level 2</button> :
+                    <button className="levelButton enable">
                                 <Link
+                                    className="link"
                                     to ='/learn/5cad18e0eade2de40405be76'
                                 >
                                     Level 2
@@ -54,9 +61,10 @@ export class CourseLinks extends React.Component {
                 }
                 </div>
                 <div className="col-4">
-                {this.determineDisabled(3) ? <><p>Complete level 2 to unlock level 3</p><button className="levelButton" disabled = {true}>Level 3</button></> :
-                    <button className="levelButton">
+                {this.determineDisabled(3) ? <button className="levelButton disabled" onClick={x => this.toastButton(2)}>Level 3</button> :
+                    <button className="levelButton enable">
                                 <Link
+                                    className="link"
                                     to ='/learn/5cad18e0eade2de40405be74'
                                 >
                                     Level 3
@@ -64,7 +72,7 @@ export class CourseLinks extends React.Component {
                     </button>
                 }
                 </div>
-            </form>
+            </div>
         );
     }
 };

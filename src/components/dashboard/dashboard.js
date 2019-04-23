@@ -14,7 +14,7 @@ export class Dashboard extends React.Component {
             <div className="dashboard">
                 <div className="row">
                     <div className="col-12">
-                        <h1>Welcome, {this.props.firstName}!</h1>
+                        <h1 className="greeting">Welcome, {this.props.firstName}!</h1>
                     </div>
                 </div>
                 <div className="row">

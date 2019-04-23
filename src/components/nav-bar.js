@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import { Link } from 'react-router-dom';
+import './nav-bar.css';
 
 export class Nav extends React.Component {
     logOut() {
@@ -15,15 +16,15 @@ export class Nav extends React.Component {
         //Button appears when user is logged in
         if (this.props.loggedIn) {
             logOutButton = (
-                <button onClick={() => this.logOut()}>
-                    Log Out
+                <button className="log-out" onClick={() => this.logOut()}>
+                    Log Out 👋
                 </button>
             );
         }
         return (
-            <nav>
-                <h1>
-                    <Link to="/">Logo Here</Link>
+            <nav role="navigation">
+                <h1 className="h1-logo">
+                    <Link className="logo" to="/">[aI pi eI]</Link>
                 </h1>
                 {logOutButton}
             </nav>

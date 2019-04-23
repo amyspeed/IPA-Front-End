@@ -31,7 +31,7 @@ export default class Input extends React.Component {
                 </label>
                 <input
                     {...this.props.input}
-                    id={this.props.input.name}
+                    className="landing-inputs"
                     type={this.props.type}
                     ref={input => (this.input = input)}
                 />

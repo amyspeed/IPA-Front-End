@@ -1,7 +1,38 @@
 .dashboard {
-    background-color: rgb(246, 225, 255);
+    background-color: rgb(247, 228, 255);
+    padding-bottom: 100px;
 }
 
-.level-button {
+.greeting {
+    margin-top: 50px;
+}
+
+.levelButton {
     width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    /* border: solid 1px rgb(254, 189, 69); */
+
+}
+
+.enable {
+    background: linear-gradient(white, rgb(255, 255, 199));
+}
+
+.total-score, .level-score {
+    text-align: center;
+    box-shadow: 3px 5px rgba(0, 0, 0, 0.331);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.total-score {
+    background-color: rgb(255, 255, 255);
+    margin-top: 100px;
+}
+
+.level-score {
+    background-color: rgb(255, 255, 255);
 }

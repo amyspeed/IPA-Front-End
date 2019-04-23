@@ -65,7 +65,7 @@ export class ScoreButton extends React.Component {
         return(
             <div>
                 <button>
-                    <Link to="/" onClick = {this.handleClick}>Submit Score!!</Link>
+                    <Link className="link" to="/" onClick = {this.handleClick}>Submit Score!!</Link>
                 </button>
                 <p class="note">Your highest score of {this.handleClick()} will be saved</p>
             </div>

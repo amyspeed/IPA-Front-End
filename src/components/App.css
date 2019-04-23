@@ -1,7 +1,26 @@
+html {
+  background-color:rgb(228, 228, 228);
+  background-image:
+    radial-gradient(circle at 100% 150%, rgb(228, 228, 228) 24%, white 25%, white 28%, rgb(228, 228, 228) 29%, rgb(228, 228, 228) 36%, white 36%, white 40%, transparent 40%, transparent),
+    radial-gradient(circle at 0    150%, rgb(228, 228, 228) 24%, white 25%, white 28%, rgb(228, 228, 228) 29%, rgb(228, 228, 228) 36%, white 36%, white 40%, transparent 40%, transparent),
+    radial-gradient(circle at 50%  100%, white 10%, rgb(228, 228, 228) 11%, rgb(228, 228, 228) 23%, white 24%, white 30%, rgb(228, 228, 228) 31%, rgb(228, 228, 228) 43%, white 44%, white 50%, rgb(228, 228, 228) 51%, rgb(228, 228, 228) 63%, white 64%, white 71%, transparent 71%, transparent),
+    radial-gradient(circle at 100% 50%, white 5%, rgb(228, 228, 228) 6%, rgb(228, 228, 228) 15%, white 16%, white 20%, rgb(228, 228, 228) 21%, rgb(228, 228, 228) 30%, white 31%, white 35%, rgb(228, 228, 228) 36%, rgb(228, 228, 228) 45%, white 46%, white 49%, transparent 50%, transparent),
+    radial-gradient(circle at 0    50%, white 5%, rgb(228, 228, 228) 6%, rgb(228, 228, 228) 15%, white 16%, white 20%, rgb(228, 228, 228) 21%, rgb(228, 228, 228) 30%, white 31%, white 35%, rgb(228, 228, 228) 36%, rgb(228, 228, 228) 45%, white 46%, white 49%, transparent 50%, transparent);
+  background-size: 100px 50px;
+}
+
 .App {
-  text-align: left;
+  text-align: center;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 15px;
+}
+
+main {
+  text-align: left;
+  margin-top: 70px;
+  display: inline-flex;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1 {
@@ -15,33 +34,72 @@ h2 {
 }
 
 h3 {
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .note {
   font-size: 12px;
 }
 
-#question {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 25px;
-}
-
-.box-image {
+img {
   width: 100%;
+  border-radius: 10px;
 }
 
 .box {
   background-color: white;
+  box-shadow: 3px 5px rgba(0, 0, 0, 0.331);
+  border-radius: 10px;
   margin-top: 0;
   padding-top: 1px;
-  padding-left: 20px;
-  padding-right: 20px;
   margin-bottom: 20px;
-  max-height: 400px;
-  min-height: 350px;
+  min-height: 360px;
 }
 
-.scores {
-  /* margin: auto; */
+.box-height {
+  max-height: 400px;
+
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 25px;
+}
+
+.box-title {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.box-content {
+  margin-left: 12%;
+}
+
+input {
+  height: 25px;
+}
+
+button {
+  font-family: 'Alice', serif;
+  font-size: 25px;
+  border-radius: 5px;
+  background: linear-gradient(white, rgb(255, 255, 199));
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.disabled {
+  color: graytext;
+}
+
+button:hover, button:focus {
+  /* background: linear-gradient(rgb(231, 255, 233), rgb(142, 255, 197)); */
+  /* background: linear-gradient(rgb(255, 202, 202), rgb(255, 1, 141)); */
+  background: linear-gradient(rgb(231, 248, 255), rgb(196, 218, 255));
 }

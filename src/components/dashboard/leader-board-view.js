@@ -8,12 +8,12 @@ export default class LeaderBoardView extends React.Component {
             <section className="row">
                 <div className="col-4">
                     <div className="box">
-                        <img className="box-image" src={success} alt="first place champion" />
+                        <img src={success} alt="first place champion" />
                     </div>
                 </div>
                 <div className="col-4">
                     <div className="box scores">
-                        <h2>Overall Top Scores</h2>
+                        <h2 className="box-title">Overall Top Scores</h2>
                         <table>
                         <tbody>
                             <tr>
@@ -33,12 +33,12 @@ export default class LeaderBoardView extends React.Component {
                 </div>
                 <div className="col-4">
                     <div className="box">
-                        <img className="box-image" src={downloading} alt="successful weightlifter" />
+                        <img src={downloading} alt="successful weightlifter" />
                     </div>
                 </div>
                 <div className="col-4">
                     <div className="box scores">
-                        <h2>Level 1 Top Scores</h2>      
+                        <h2 className="box-title">Level 1 Top Scores</h2>      
                         <table>
                         <tbody>
                             <tr>
@@ -58,7 +58,7 @@ export default class LeaderBoardView extends React.Component {
                 </div>
                 <div className="col-4">
                     <div className="box scores">
-                        <h2>Level 2 Top Scores</h2>
+                        <h2 className="box-title">Level 2 Top Scores</h2>
                         <table>
                         <tbody>
                             <tr>
@@ -78,7 +78,7 @@ export default class LeaderBoardView extends React.Component {
                 </div>
                 <div className="col-4">
                     <div className="box scores">
-                        <h2>Level 3 Top Scores</h2>
+                        <h2 className="box-title">Level 3 Top Scores</h2>
                         <table>
                         <tbody>
                             <tr>

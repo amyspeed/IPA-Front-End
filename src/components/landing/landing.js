@@ -25,20 +25,20 @@ export function Landing(props) {
             <div className="row">
                 <div className="col-4">
                     <div className="box">
-                        <img className="box-image" src={welcome} alt="person waving" />
+                        <img src={welcome} alt="person waving" />
                     </div>
                 </div>
                 <div className="col-4">
                     <div className="box">
-                        <h2>Sign up for a new account:</h2>
+                        <h2 className="box-title">Sign up for a new account:</h2>
                         <Register />
                     </div>
                 </div>
                 <div className="col-4">
                     <div className="box">
-                        <h2>Already Registered? Sign in:</h2>
+                        <h2 className="box-title">Already Registered? Sign in:</h2>
                         <LogIn />
-                        <h2>Not ready to commit? Try the demo:</h2>
+                        <h2 className="box-title">Can't Commit? Try the demo:</h2>
                         <Demo />
                     </div>
                 </div>

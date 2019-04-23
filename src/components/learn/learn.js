@@ -40,11 +40,17 @@ export class Learn extends React.Component {
         const questionData = this.props.level.questions;
         return (
             <div className="learn">
-                <button><Link to="/">Exit Level</Link></button>
+                <div className="top-button">
+                    <button><Link className="link" to="/">Exit Level</Link></button>
+                </div>
                 <h1>Level {this.getLevelNum()}</h1>
-                {this.state.completedInstructions ? 
-                    <Module questionData={questionData} /> : 
-                    <Instructions instructions={instructions} handleClick={this.completeInstructions} /> }
+                <div className="row">
+                    <div className="col-12">
+                    {this.state.completedInstructions ? 
+                        <Module questionData={questionData} /> : 
+                        <Instructions instructions={instructions} handleClick={this.completeInstructions} /> }
+                    </div>
+                </div>
             </div>
 
         );

@@ -40,7 +40,7 @@ export default class Module extends React.Component {
             });
         }
         else {
-            toast.error("🤷🏻‍ Oops! Incorrect... 💩", {position: "top-center", autoClose: 2500});
+            toast("🤷🏻‍ Oops! Incorrect... 💩", {position: "top-center", autoClose: 2500});
             return this.setState({
                 feedback: `Good try! The correct answer is "` + correctAnswer + `"`
             })
@@ -78,7 +78,7 @@ export default class Module extends React.Component {
         const question = this.props.questionData[i].question;
 
         return (
-            <div class="module">
+            <div className="box learn-box">
                 <Counter 
                     questionNum = {questionNum} 
                     questionLength = {questionLength}/>
