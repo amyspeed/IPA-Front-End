@@ -32,7 +32,7 @@ export class CourseLinks extends React.Component {
     }
 
     toastButton(id) {
-        toast(`You must complete level ${id} to unlock this level`)
+        toast.info(`🔒 Level Locked! Complete level ${id}!`, {position: "top-center", autoClose: 2000})
     }
 
     render() {
