@@ -1,5 +1,5 @@
 .landing {
-    background-image: linear-gradient(rgb(196, 218, 255), rgba(196, 218, 255, 0.591));
+    background-image: linear-gradient(rgb(212, 229, 255), rgba(212, 229, 255, 0.68));
     padding-bottom: 70px;
 }
 
@@ -9,4 +9,8 @@
 
 .landing-buttons {
     width: 85%;
+}
+
+.welcome {
+    margin-bottom: 30px;
 }
