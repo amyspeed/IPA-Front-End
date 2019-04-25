@@ -8,18 +8,59 @@ nav {
     width: 100%
 }
 
-.h1-logo {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 7%;
-    text-align: left;
-    font-size: 35px;
+.logo {
+  text-decoration: none;
+  color: rgb(254, 254, 208);
 }
 
-.logo {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
+#bracket2 {
+  position: absolute;
+  top: 0px;
+  left: 135px;
+}
 
+.h1-logo {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 7%;
+  text-align: left;
+  font-size: 35px;
+  animation: bracketFade 7s linear infinite alternate;
+}
+
+@keyframes bracketFade {
+  from {
+    color: rgb(254, 254, 208);
+  }
+  to {
+    color: black;
+  }
+}
+
+.logo-text::after {
+  animation: changeLetter 7s linear infinite alternate;
+  content: " aI pi eI ";
+  color: white;
+}
+
+@keyframes changeLetter {
+  0% {
+    content: " aI pi eI ";
+    color: white;
+  }
+  25% {
+    color: white;
+  }
+  50% {
+    color: rgb(0, 0, 0);
+  }
+  75% {
+    color: white;
+  }
+  100% {
+    content: " I . P . A .";
+    color: white;
+  }
 }
 
 .log-out {

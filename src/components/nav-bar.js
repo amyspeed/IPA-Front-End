@@ -23,9 +23,10 @@ export class Nav extends React.Component {
         }
         return (
             <nav role="navigation">
-                <h1 className="h1-logo">
-                    <Link className="logo" to="/">[aI pi eI]</Link>
-                </h1>
+                <Link className="logo" to="/">
+                    <h1 className="h1-logo">[<span className="logo-text"></span></h1>
+                    <h1 className="h1-logo" id="bracket2">]</h1>
+                </Link>
                 {logOutButton}
             </nav>
         );
