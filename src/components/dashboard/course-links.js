@@ -39,20 +39,20 @@ export class CourseLinks extends React.Component {
         return (            
             <div>
                 <div className="col-4">
-                <Link to ='/learn/5cc25253f0622b826ea0a235'>
+                <Link to ='/learn/5cc37416f0622b826eb46363'>
                     <button className="levelButton enable">Level 1</button>
                 </Link>
                 </div>
                 <div className="col-4">
                 {this.determineDisabled(2) ? <button className="levelButton disabled" onClick={x => this.toastButton(1)}>Level 2</button> :
-                    <Link to ='/learn/5cc25253f0622b826ea0a236'>
+                    <Link to ='/learn/5cc37416f0622b826eb46364'>
                         <button className="levelButton enable">Level 2</button>
                     </Link>
                 }
                 </div>
                 <div className="col-4">
                 {this.determineDisabled(3) ? <button className="levelButton disabled" onClick={x => this.toastButton(2)}>Level 3</button> :
-                    <Link to ='/learn/5cc25253f0622b826ea0a237'>
+                    <Link to ='/learn/5cc37416f0622b826eb46365'>
                         <button className="levelButton enable">Level 3</button>
                     </Link>
                 }
