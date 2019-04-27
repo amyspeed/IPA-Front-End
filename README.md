@@ -1,23 +1,31 @@
-# [aI pi eI] | IPA Learning App
+# [ aI pi eI ]  IPA Learning App
 This app is a gateway to your immersive International Phonetic Alphabet learning experience!
+
 
 ## Live Version
 [See the live app here](https://pacific-basin-65264.herokuapp.com)
 
+
 ## API
 This repository is client only.
 [Find the server repository here](https://github.com/amyspeed/IPA-Back-End).
+
+
+## Take a Look Inside!
 
 ### Landing Page
 Users are welcomed and introduced to the app. Users can register for a new account, log into their existing account, or access a demo. Once logged in, users are taken to the Dashboard.
 
 ![Landing](./src/images/landing.png)
 
+
 ### Dashboard
-Once logged in, users are taken to their dashboard. They are greeted by first name. A Toast notification lets the user know how far they are from reaching the top score. Below the learning-module links the user can view their own current standing for level 1, 2, 3, and total score. The leaderboards follow. The user can view leaderboards for total scores and for each of the three levels. From this page, the user can access their authorized course modules or log out.
+Once logged in, users are taken to their dashboard. They are greeted by first name. A Toast notification lets the user know how far they are from reaching the top score. Below the learning-module links, the user can view their own current standing for level 1, 2, 3, and total score. The leaderboards follow. The user can view leaderboards for total scores and for each of the three levels. From this page, the user can access their authorized course modules or log out.
 
 ![Dashboard](./src/images/dashboard1.png)
+
 ![Leaderboards](./src/images/dashboard2.png)
+
 
 ### Learning Module
 Entering through one of the "level" buttons, the user is taken to the learning module. The user is first introduced to the level and offered advice. Once clicking the "Let's Go" button, the user begin's their learning journey.
@@ -27,9 +35,11 @@ Entering through one of the "level" buttons, the user is taken to the learning m
 IPA examples are offered in a unicode serif typeface capable of capturing all necessary symbols. Once the user submits their guesses, the submit button and input are replaced with feedback. Scores are only recorded at the very end with the "submit score" button and a return to the dashboard. 
 
 ![Module](./src/images/module1.png)
+
 ![Module Submitted](./src/images/module2.png)
 
 Links to the dashboard can be accessed by clicking anywhere on the navigation bar (other than the log out button) and by clicking the "exit level" button. Both options exit without saving the user's new score. The user can also log out from the module.
+
 
 ## Technologies
 
@@ -52,6 +62,7 @@ Links to the dashboard can be accessed by clicking anywhere on the navigation ba
 * Travis CI
 * mLab
 * Heroku
+
 
 ## Author
 
