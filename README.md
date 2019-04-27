@@ -3,8 +3,9 @@ This app is a gateway to your immersive International Phonetic Alphabet learning
 
 
 ## Live Version
-[See the live app here](https://pacific-basin-65264.herokuapp.com)
-Enter the app to compete with others while learning to use an amazing Phonetic system utilized by linguists, speech-language pathologists, foreign-language students, translators, actors and classical singers!
+[See the live app here!](https://pacific-basin-65264.herokuapp.com)
+
+Enter to compete with others while learning to use an amazing Phonetic system utilized by linguists, speech-language pathologists, foreign-language students, translators, actors and classical singers!
 
 Have you ever wondered about those funny looking symbols next to each entry in the dictionary that are supposed to help with pronunciation? Leave these lessons with a greater ability to read between those brackets! Soon you'll be pronouncing new foreign-language words flawlessly as well.
 
@@ -13,6 +14,7 @@ Let the learning begin!
 
 ## API
 This repository is client only.
+
 [Find the server repository here](https://github.com/amyspeed/IPA-Back-End).
 
 
