@@ -9,8 +9,6 @@ import {
     AUTH_SUCCESS,
     authError,
     AUTH_ERROR,
-    login,
-    refreshAuthToken
 } from './auth';
 
 describe('setAuthToken', () => {
@@ -23,39 +21,33 @@ describe('setAuthToken', () => {
 });
 
 describe('clearAuth', () => {
-    const action = clearAuth();
-    expect(action.type).toEqual(CLEAR_AUTH);
+    it('should return the action', () => {
+        const action = clearAuth();
+        expect(action.type).toEqual(CLEAR_AUTH);
+    })
 });
 
 describe('authRequest', () => {
-    const action = authRequest();
-    expect(action.type).toEqual(AUTH_REQUEST);
+    it('should return the action', () => {
+        const action = authRequest();
+        expect(action.type).toEqual(AUTH_REQUEST);
+    });
 });
 
 describe('authSuccess', () => {
-    const currentUser = 'userTest';
-    const action = authSuccess(currentUser);
-    expect(action.type).toEqual(AUTH_SUCCESS);
-    expect(action.currentUser).toEqual(currentUser);
+    it('should return the action', () => {
+        const currentUser = 'userTest';
+        const action = authSuccess(currentUser);
+        expect(action.type).toEqual(AUTH_SUCCESS);
+        expect(action.currentUser).toEqual(currentUser);
+    });
 });
 
 describe('authError', () => {
-    const error = 'ERROR MESSAGE!!'
-    const action = authError(error);
-    expect(action.type).toEqual(AUTH_ERROR);
-    expect(action.error).toEqual(error);
+    it('should return the action', () => {
+        const error = 'ERROR MESSAGE!!';
+        const action = authError(error);
+        expect(action.type).toEqual(AUTH_ERROR);
+        expect(action.error).toEqual(error);
+    });
 });
-
-// describe('login', () => {
-//     it('should return the action', () => {
-//         const username = 'userTest';
-//         const password = 'paswordTest'
-//         const action = login(username, password);
-//         expect(action.type).toEqual(AUTH_SUCCESS);
-//     });
-// });
-
-// describe('refreshAuthToken', () {
-
-// })
-
