@@ -2,6 +2,7 @@
 This app is a gateway to your immersive International Phonetic Alphabet learning experience!
 
 
+
 ## Live Version
 [See the live app here!](https://pacific-basin-65264.herokuapp.com)
 
@@ -12,10 +13,11 @@ Have you ever wondered about those funny looking symbols next to each entry in t
 Let the learning begin!
 
 
+
 ## API
 This repository is client only.
+[Find the server repository here.](https://github.com/amyspeed/IPA-Back-End).
 
-[Find the server repository here](https://github.com/amyspeed/IPA-Back-End).
 
 
 ## Take a Look Inside!
