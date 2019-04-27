@@ -30,8 +30,13 @@ export default class Module extends React.Component {
 
     verify() {
         const index = this.state.arrayIndex;
-        const correctAnswer = this.props.questionData[index].answer;
-        if (this.state.guess === correctAnswer) {
+        const correctAnswer = this.props.questionData[index].answer
+        
+        //toLowerCase() used to validate guess without Case sensitivity:
+        const answerLowerCase = correctAnswer.toLowerCase();
+        const guess = this.state.guess.toLowerCase();
+
+        if (guess === answerLowerCase) {
             toast.warning("🏆 100 Points!!! 🌟", {position: "top-center", autoClose: 2500})
             return this.setState({
                 feedback: `Excellect! "` + correctAnswer + `" is correct!`,
