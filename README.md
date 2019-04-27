@@ -1,68 +1,58 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# [aI pi eI] | IPA Learning App
+This app is a gateway to your immersive International Phonetic Alphabet learning experience!
 
-## Available Scripts
+## Live Version
+[See the live app here](https://pacific-basin-65264.herokuapp.com)
 
-In the project directory, you can run:
+## API
+This repository is client only.
+[Find the server repository here](https://github.com/amyspeed/IPA-Back-End).
 
-### `npm start`
+### Landing Page
+Users are welcomed and introduced to the app. Users can register for a new account, log into their existing account, or access a demo. Once logged in, users are taken to the Dashboard.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Landing](./src/images/landing.png)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Dashboard
+Once logged in, users are taken to their dashboard. They are greeted by first name. A Toast notification lets the user know how far they are from reaching the top score. Below the learning-module links the user can view their own current standing for level 1, 2, 3, and total score. The leaderboards follow. The user can view leaderboards for total scores and for each of the three levels. From this page, the user can access their authorized course modules or log out.
 
-### `npm test`
+![Dashboard](./src/images/dashboard1.png)
+![Leaderboards](./src/images/dashboard2.png)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Learning Module
+Entering through one of the "level" buttons, the user is taken to the learning module. The user is first introduced to the level and offered advice. Once clicking the "Let's Go" button, the user begin's their learning journey.
 
-### `npm run build`
+![Module Instructions](./src/images/module-instructions.png)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+IPA examples are offered in a unicode serif typeface capable of capturing all necessary symbols. Once the user submits their guesses, the submit button and input are replaced with feedback. Scores are only recorded at the very end with the "submit score" button and a return to the dashboard. 
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+![Module](./src/images/module1.png)
+![Module Submitted](./src/images/module2.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Links to the dashboard can be accessed by clicking anywhere on the navigation bar (other than the log out button) and by clicking the "exit level" button. Both options exit without saving the user's new score. The user can also log out from the module.
 
-### `npm run eject`
+## Technologies
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Front End
+* React
+* Redux
+* HTML5
+* CSS3
+* JavaScript
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Back End
+* Node.js
+* Express
+* MongoDB
+* Mongoose
+* Mocha
+* Chai
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### DevOps
+* Travis CI
+* mLab
+* Heroku
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Author
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Amy Speed-Henley
