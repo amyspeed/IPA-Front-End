@@ -47,7 +47,7 @@ export default class Module extends React.Component {
         else {
             toast("🤷🏻‍ Oops! Incorrect... 💩", {position: "top-center", autoClose: 2500});
             return this.setState({
-                feedback: `Good try! The correct answer is "` + correctAnswer + `"`
+                feedback: `Close! The correct answer is "` + correctAnswer + `" not "` + this.state.guess + `."`
             })
         }
     }

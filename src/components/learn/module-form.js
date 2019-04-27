@@ -15,9 +15,12 @@ export default class ModuleForm extends React.Component {
     render() {
         return (
             <form onSubmit={e => this.handleSubmit(e)}>
+                    {this.props.feedback ? '' :
                     <label htmlFor="answer">
                         Enter answer in English
                     </label>
+                    }
+                    {this.props.feedback ? '' :
                     <input
                         value={this.props.guess}
                         onChange={this.props.handleChange}
@@ -26,6 +29,7 @@ export default class ModuleForm extends React.Component {
                         id="answer"
                         required
                     />
+                    }
                     {this.props.feedback ? '' :
                     <button className="module-buttons">
                         Submit
