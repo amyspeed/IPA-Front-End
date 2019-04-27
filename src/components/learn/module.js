@@ -3,7 +3,6 @@ import { toast } from 'react-toastify';
 import Counter from './counter';
 import ModuleForm from './module-form';
 import Feedback from './feedback';
-import './module.css';
 
 export default class Module extends React.Component {
     constructor(props) {
