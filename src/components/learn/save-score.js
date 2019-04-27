@@ -53,7 +53,6 @@ export class ScoreButton extends React.Component {
         }
 
         this.props.dispatch(PutScoresByUserId(userId, putData));
-        console.log("PUT data", putData);
 
         return levelScore || "";
     };

@@ -19,7 +19,6 @@ export default class CurrentStanding extends React.Component {
     }
 
     toastStanding() {
-        console.log(this.props.currentStanding);
         if (isNaN(this.props.currentStanding)) {
             console.log(this.props.currentStanding)
         } else if (this.props.currentStanding === 0) { 
