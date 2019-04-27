@@ -39,7 +39,7 @@ export default class Module extends React.Component {
         if (guess === answerLowerCase) {
             toast.warning("🏆 100 Points!!! 🌟", {position: "top-center", autoClose: 2500})
             return this.setState({
-                feedback: `Excellect! "` + correctAnswer + `" is correct!`,
+                feedback: `Excellent! "` + correctAnswer + `" is correct!`,
                 points: this.state.points + 100,
                 currentPoints: 100
             });
