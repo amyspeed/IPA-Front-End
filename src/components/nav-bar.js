@@ -17,7 +17,7 @@ export class Nav extends React.Component {
         if (this.props.loggedIn) {
             logOutButton = (
                 <button className="log-out" onClick={() => this.logOut()}>
-                    Log Out 👋
+                    Log Out <span role="img" aria-label="wave">👋</span>
                 </button>
             );
         }
