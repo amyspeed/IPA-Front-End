@@ -4,7 +4,7 @@ This app is a gateway to your immersive International Phonetic Alphabet learning
 
 
 ## Live Version
-[See the live app here!](https://pacific-basin-65264.herokuapp.com)
+[See the live app here!](https://ipa-learning.herokuapp.com)
 
 Enter to compete with others while learning to use an amazing Phonetic system utilized by linguists, speech-language pathologists, foreign-language students, translators, actors and classical singers!
 
