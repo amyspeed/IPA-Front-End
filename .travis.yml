@@ -7,7 +7,7 @@ deploy:
   provider: heroku
   api_key:
     secure: T/P51glaeQU9zR5BbC01lZDtAB/KY2cKP3mdx20QhdRCwm9Jae7q3FL2TJLJDpOsJEU6Mc/4YQZicdY4tZaCCQOyZSr3L/KuBHkU2byEzKz4vAzsRzb9BCS1TipQHh19Y37iN7uBfwdakdxZzlhnyTPwFU9rB+xJb/2vYHQFUajwd/d9ljEa9h5rOs6NTh/ew4kqPYBwyAxxCnCr8D+98K8SZy7Q3JawZBFPrdrZurHF80ewW4mZRb7IP5NWNvgSsQ1A/ldYhcjqJ5Pubhv5yLolTe/VbGVV4EC3LAxhCsr9Mj1BKDpNWHPNK7ndKNHhGtb2IGqxZtrkw7d22xQicWZPTocRElCIr8DiD6MpNxcSM78Di1tMby986jCfozR8uN6yrGD1b2KGeO5j2+DnEZzAO8alRL1y7K1t993TsoKr75kC7km9F4iQdWIjytgwG4QYtYXlBsbDs/yX0PVFdD+EFugNEgf6Zg/0LbAUeUeGoCPyGsgQ7VGoRp4rDSE5R1JwrhUCtSO9Cv7CB/bFtqj0IWM2r8hb8jirka1wlxLtow12BP1FOos87+33UiIF5nu4szHILQHp7F3rkbqmQK3+R2bB6f2WFuJhfY+fo2ENHpFy7HZSS6oO7rlxTxHxHmu91uTEJPw+ezlvKcEzZ3+FO1o3sx6weAhuLcC3QxM=
-  app: pacific-basin-65264
+  app: ipa-front-end-react
   on:
     repo: amyspeed/IPA-Front-End
   skip_cleanup: 'true'
