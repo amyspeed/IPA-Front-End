@@ -45,7 +45,10 @@ export const login = (username, password) => dispatch => {
     return (
         fetch(`${API_BASE_URL}/auth/login`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },
             body: JSON.stringify({
                 username,
                 password
@@ -75,7 +78,10 @@ export const refreshAuthToken = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/auth/refresh`, {
         method: 'POST',
-        headers: { Authorization: `Bearer ${authToken}` }
+        headers: { 
+            Authorization: `Bearer ${authToken}`,
+            'Access-Control-Allow-Origin': '*'
+        }
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
