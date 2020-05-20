@@ -23,10 +23,7 @@ export const fetchScores = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/users/scores`, {
         method: 'GET',
-        headers: { 
-            Authorization: `Bearer ${authToken}`,
-            'Access-Control-Allow-Origin': '*'
-        }
+        headers: { Authorization: `Bearer ${authToken}`}
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
@@ -40,10 +37,7 @@ export const fetchScoresById = (userId) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/users/scores/${userId}`, {
         method: 'GET',
-        headers: { 
-            Authorization: `Bearer ${authToken}`,
-            'Access-Control-Allow-Origin': '*'
-        }
+        headers: { Authorization: `Bearer ${authToken}`}
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
@@ -59,8 +53,7 @@ export const PutScoresByUserId = (userId, putData) => (dispatch, getState) => {
         method: 'PUT',
         headers: { 
             Authorization: `Bearer ${authToken}`,
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(putData)
     })

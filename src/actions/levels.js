@@ -17,10 +17,7 @@ export const fetchLevel = (levelId) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/levels/${levelId}`, {
         method: 'GET',
-        headers: { 
-            Authorization: `Bearer ${authToken}`,
-            'Access-Control-Allow-Origin': '*'
-        }
+        headers: { Authorization: `Bearer ${authToken}`}
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
