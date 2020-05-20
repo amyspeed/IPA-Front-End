@@ -37,7 +37,10 @@ export const fetchScoresById = (userId) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/users/scores/${userId}`, {
         method: 'GET',
-        headers: { Authorization: `Bearer ${authToken}`}
+        headers: { 
+            Authorization: `Bearer ${authToken}`,
+            'Access-Control-Allow-Origin': '*'
+        }
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
